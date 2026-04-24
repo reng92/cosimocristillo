@@ -1,530 +1,671 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cosimo Cristillo Sindaco – Portico in Comune</title>
-  <meta name="description" content="Cosimo Cristillo candidato Sindaco di Portico di Caserta. Lista civica Portico in Comune. Elezioni 24 e 25 Maggio 2026." />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Cosimo Cristillo Sindaco – Portico in Comune | Elezioni 2026</title>
+<meta name="description" content="Cosimo Cristillo candidato Sindaco di Portico di Caserta con la lista civica Portico in Comune. Programma elettorale completo. Elezioni 24-25 Maggio 2026."/>
+<!-- Facebook SDK – necessario per gli embed (funziona su dominio web, non su file://) -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v19.0"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blu:#1a56c4;--blu-m:#0d3580;--blu-s:#071d4a;
+  --oro:#f0c040;--bianco:#fff;--grigio:#f4f6fb;--grigio2:#e8ecf4;
+  --testo:#1a1e2e;--testo2:#505575;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--testo);background:var(--bianco);line-height:1.65;overflow-x:hidden}
 
-    :root {
-      --blu:    #1a56c4;
-      --blu-sc: #0f3a8f;
-      --oro:    #f0c040;
-      --bianco: #ffffff;
-      --grigio: #f4f6fb;
-      --testo:  #1a1e2e;
-      --r: 1rem;
-    }
+/* ── HEADER ── */
+header{background:var(--blu-m);position:sticky;top:0;z-index:999;box-shadow:0 2px 18px rgba(0,0,0,.35)}
+.nav-inner{max-width:1180px;margin:auto;padding:.55rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.nav-logo{height:42px;width:42px;border-radius:50%;object-fit:cover}
+.nav-brand-text{color:#fff;line-height:1.2}
+.nav-brand-text strong{font-size:.92rem;display:block}
+.nav-brand-text span{font-size:.68rem;opacity:.7;letter-spacing:.07em;text-transform:uppercase}
+nav{display:flex;gap:1.1rem;align-items:center;flex-wrap:wrap}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.03em;transition:color .2s;white-space:nowrap}
+nav a:hover{color:var(--oro)}
+.nav-cta{background:var(--oro)!important;color:var(--testo)!important;padding:.3rem .85rem;border-radius:100px;font-weight:700!important}
+.nav-cta:hover{background:#ffd54f!important}
+@media(max-width:760px){nav{display:none}}
 
-    html { scroll-behavior: smooth; }
+/* ── HERO ── */
+.hero{min-height:100svh;background:var(--blu-m);position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('content/Foto%20Cosimo%20Cristillo%20Sindaco/CosimoCristillo1.jpg')center/cover no-repeat;opacity:.07}
+.hero-wave{position:absolute;bottom:-1px;left:0;right:0;line-height:0}
+.hero-wave svg{display:block;width:100%}
+.hero-inner{position:relative;z-index:1;max-width:1180px;margin:auto;padding:7rem 1.5rem 9rem;display:grid;grid-template-columns:1.15fr 1fr;gap:3rem;align-items:center}
+.hero-text{color:#fff}
+.hero-top{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.hero-top img{height:54px}
+.hero-lista{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--oro)}
+h1.hero-nome{font-size:clamp(2.8rem,6vw,4.6rem);font-weight:900;line-height:1.05;letter-spacing:-.025em;margin-bottom:.5rem}
+h1.hero-nome span{color:var(--oro);display:block}
+.hero-ruolo{font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;opacity:.65;margin-bottom:1.75rem}
+.hero-slogan{font-size:clamp(1.3rem,3vw,1.85rem);font-weight:700;line-height:1.3;border-left:4px solid var(--oro);padding-left:1rem;margin-bottom:2.25rem}
+.hero-slogan em{color:var(--oro);font-style:normal}
+.hero-meta{display:flex;flex-direction:column;gap:.45rem;font-size:.88rem;opacity:.78}
+.hero-meta span{display:flex;align-items:center;gap:.5rem}
+.hero-photo-wrap{display:flex;justify-content:center}
+.hero-photo{width:min(360px,100%);aspect-ratio:4/5;object-fit:cover;object-position:top center;border-radius:1.75rem;border:4px solid var(--oro);box-shadow:0 0 60px rgba(240,192,64,.2),0 24px 64px rgba(0,0,0,.55)}
+@media(max-width:720px){
+  .hero-inner{grid-template-columns:1fr;padding:5rem 1.5rem 7rem;text-align:center}
+  .hero-photo-wrap{order:-1}
+  .hero-photo{width:180px;aspect-ratio:3/4;border-radius:1rem}
+  .hero-top{justify-content:center}
+  .hero-slogan{border-left:none;border-top:4px solid var(--oro);padding-left:0;padding-top:.75rem}
+  .hero-meta{align-items:center}
+}
 
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      color: var(--testo);
-      background: var(--bianco);
-      line-height: 1.6;
-    }
+/* ── UTILS ── */
+.container{max-width:1180px;margin:auto}
+.tag{display:inline-flex;align-items:center;gap:.4rem;background:var(--grigio2);color:var(--blu);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .8rem;border-radius:100px;margin-bottom:.75rem}
+.tag.light{background:rgba(255,255,255,.12);color:var(--oro)}
+h2.stitle{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:.6rem}
+h2.stitle span{color:var(--blu)}
+h2.stitle.on-dark{color:#fff}
+h2.stitle.on-dark span{color:var(--oro)}
+.bar{width:52px;height:4px;background:var(--oro);border-radius:4px;margin:.75rem 0 2rem}
+.bar.center{margin-left:auto;margin-right:auto}
+.lead{font-size:1.03rem;color:var(--testo2);max-width:680px;margin-bottom:2.5rem;line-height:1.72}
+.lead.light{color:rgba(255,255,255,.72)}
 
-    /* ── HEADER ── */
-    header {
-      background: var(--blu);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,.25);
-    }
-    .nav-inner {
-      max-width: 1100px;
-      margin: auto;
-      padding: .75rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-      text-decoration: none;
-    }
-    .nav-brand-text { color: var(--bianco); }
-    .nav-brand-text strong { font-size: 1.05rem; display: block; }
-    .nav-brand-text span { font-size: .75rem; opacity: .8; letter-spacing: .04em; text-transform: uppercase; }
-    nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    nav a {
-      color: rgba(255,255,255,.85);
-      text-decoration: none;
-      font-size: .88rem;
-      font-weight: 500;
-      letter-spacing: .03em;
-      transition: color .2s;
-    }
-    nav a:hover { color: var(--oro); }
+/* ── SECTION PADDING ── */
+.sec{padding:5.5rem 1.5rem}
+.sec-sm{padding:3rem 1.5rem}
 
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      background: var(--blu-sc);
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('img/679615780_4490087901263942_7908930859783692416_n.jpg');
-      background-size: cover;
-      background-position: center;
-      opacity: .18;
-    }
-    .hero-content {
-      position: relative;
-      max-width: 1100px;
-      margin: auto;
-      padding: 6rem 1.5rem 4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    .hero-text { color: var(--bianco); }
-    .hero-badge {
-      display: inline-block;
-      background: var(--oro);
-      color: var(--testo);
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .35rem .9rem;
-      border-radius: 100px;
-      margin-bottom: 1.25rem;
-    }
-    .hero-nome {
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: .5rem;
-    }
-    .hero-nome span { color: var(--oro); }
-    .hero-ruolo {
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      opacity: .75;
-      margin-bottom: 1.5rem;
-    }
-    .hero-slogan {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 2rem;
-    }
-    .hero-slogan em {
-      color: var(--oro);
-      font-style: normal;
-    }
-    .hero-data {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-      font-size: .95rem;
-      opacity: .85;
-    }
-    .hero-data .icon { font-size: 1.3rem; }
-    .hero-photo-wrap {
-      display: flex;
-      justify-content: center;
-    }
-    .hero-photo {
-      width: min(380px, 100%);
-      border-radius: 50%;
-      border: 5px solid var(--oro);
-      box-shadow: 0 0 60px rgba(0,0,0,.5);
-      object-fit: cover;
-      aspect-ratio: 1;
-    }
-    @media (max-width: 700px) {
-      .hero-content { grid-template-columns: 1fr; text-align: center; padding-top: 4rem; }
-      .hero-photo-wrap { order: -1; }
-      .hero-photo { width: 220px; }
-      .hero-data { justify-content: center; }
-    }
+/* ── PILASTRI ── */
+#pilastri{background:var(--grigio)}
+.pilastri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.pilastro{background:var(--bianco);border-radius:1rem;padding:1.5rem;border-top:4px solid var(--blu);text-decoration:none;color:var(--testo);transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column;gap:.4rem}
+.pilastro:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(26,86,196,.13);border-color:var(--oro)}
+.pilastro .pi{font-size:1.9rem}
+.pilastro h3{font-size:.9rem;font-weight:700;color:var(--blu);line-height:1.3}
+.pilastro p{font-size:.78rem;color:var(--testo2)}
+@media(max-width:880px){.pilastri-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.pilastri-grid{grid-template-columns:1fr}}
 
-    /* ── WAVE DIVIDER ── */
-    .wave { line-height: 0; }
-    .wave svg { display: block; width: 100%; }
+/* ── PROG GRID ── */
+.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.prog-grid.flip{direction:rtl}
+.prog-grid.flip>*{direction:ltr}
+@media(max-width:740px){.prog-grid{grid-template-columns:1fr}.prog-grid.flip{direction:ltr}}
+.prog-body p{font-size:1rem;color:var(--testo2);margin-bottom:.85rem;line-height:1.72}
+.prog-body p strong{color:var(--testo)}
+.prog-box{background:var(--grigio2);border-radius:1.25rem;padding:2rem}
+.prog-box.dark{background:rgba(255,255,255,.08)}
+.prog-box h4{font-size:.88rem;font-weight:700;color:var(--blu);margin-bottom:1rem;text-transform:uppercase;letter-spacing:.06em}
+.prog-box.dark h4{color:var(--oro)}
+.prog-box ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.prog-box li{display:flex;align-items:flex-start;gap:.65rem;font-size:.88rem;color:var(--testo);line-height:1.4}
+.prog-box.dark li{color:rgba(255,255,255,.88)}
+.prog-box li::before{content:'✓';flex-shrink:0;background:var(--blu);color:#fff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-top:.1rem}
+.prog-box.dark li::before{background:var(--oro);color:var(--testo)}
 
-    /* ── SECTION BASE ── */
-    section { padding: 5rem 1.5rem; }
-    .container { max-width: 1100px; margin: auto; }
-    .section-label {
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--blu);
-      margin-bottom: .5rem;
-    }
-    .section-title {
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .section-title span { color: var(--blu); }
-    .divider {
-      width: 56px;
-      height: 4px;
-      background: var(--oro);
-      border-radius: 4px;
-      margin: 1rem 0 2rem;
-    }
+/* quote */
+.qblock{border-left:4px solid var(--oro);background:var(--grigio);border-radius:0 .75rem .75rem 0;padding:1.1rem 1.4rem;font-size:1.05rem;font-style:italic;color:var(--blu-m);font-weight:600;margin:1.5rem 0}
 
-    /* ── MANIFESTO ── */
-    #manifesto { background: var(--grigio); }
-    .manifesto-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    .manifesto-img {
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 8px 40px rgba(26,86,196,.15);
-    }
-    .manifesto-img img { width: 100%; display: block; }
-    .manifesto-body p {
-      font-size: 1.05rem;
-      margin-bottom: 1rem;
-      color: #2a2e42;
-    }
-    .manifesto-body p strong { color: var(--blu); }
-    .manifesto-quote {
-      border-left: 4px solid var(--oro);
-      background: var(--bianco);
-      border-radius: 0 .75rem .75rem 0;
-      padding: 1rem 1.25rem;
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--blu-sc);
-      margin: 1.5rem 0;
-    }
-    @media (max-width: 750px) {
-      .manifesto-grid { grid-template-columns: 1fr; }
-    }
+/* ── DARK SECTION ── */
+.sec-dark{background:var(--blu-m);color:#fff}
+.sec-dark .prog-body p{color:rgba(255,255,255,.82)}
+.sec-dark .prog-body p strong{color:#fff}
 
-    /* ── IMPEGNI ── */
-    #impegni { background: var(--bianco); }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: var(--grigio);
-      border-radius: 1rem;
-      padding: 2rem 1.5rem;
-      border-top: 4px solid var(--blu);
-      transition: transform .25s, box-shadow .25s;
-    }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,86,196,.12); }
-    .card-icon { font-size: 2.2rem; margin-bottom: 1rem; }
-    .card h3 { font-size: 1.1rem; font-weight: 700; color: var(--blu); margin-bottom: .5rem; }
-    .card p { font-size: .93rem; color: #444; }
+/* ── 100 GIORNI ── */
+#giorni{background:var(--blu-s);color:#fff}
+.giorni-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:.5rem}
+.gcol{background:rgba(255,255,255,.06);border-radius:1rem;padding:1.25rem;border-top:3px solid var(--oro)}
+.gcol h3{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--oro);margin-bottom:.85rem;line-height:1.35}
+.gcol ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.gcol li{font-size:.78rem;color:rgba(255,255,255,.82);line-height:1.35;padding-left:.85rem;position:relative}
+.gcol li::before{content:'→';position:absolute;left:0;color:var(--oro);font-size:.65rem;top:.05rem}
+@media(max-width:1080px){.giorni-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.giorni-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.giorni-grid{grid-template-columns:1fr}}
 
-    /* ── LISTA ── */
-    #lista { background: var(--blu); color: var(--bianco); }
-    #lista .section-title span { color: var(--oro); }
-    #lista .section-label { color: var(--oro); }
-    #lista .divider { background: var(--oro); }
-    .lista-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    #lista p { font-size: 1.05rem; opacity: .9; margin-bottom: 1rem; }
-    .lista-img {
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 12px 48px rgba(0,0,0,.35);
-    }
-    .lista-img img { width: 100%; display: block; }
-    @media (max-width: 750px) {
-      .lista-content { grid-template-columns: 1fr; }
-    }
+/* ── CANDIDATI ── */
+#candidati{background:var(--grigio)}
+.cand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.15rem;margin-top:2.25rem}
+.cand-card{background:var(--bianco);border-radius:1rem;overflow:hidden;box-shadow:0 3px 16px rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s;text-align:center}
+.cand-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(26,86,196,.12)}
+.cand-photo{width:100%;aspect-ratio:1;object-fit:cover;object-position:top center;display:block}
+.cand-info{padding:.8rem .7rem .95rem}
+.cand-info .fn{font-size:.82rem;font-weight:500;color:var(--testo2)}
+.cand-info .ln{font-size:.95rem;font-weight:800;color:var(--blu);line-height:1.2}
+.cand-info .num{font-size:.66rem;color:#888;margin-top:.2rem;letter-spacing:.04em}
+/* sindaco featured */
+.cand-card.sindaco{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;border:3px solid var(--oro);text-align:left}
+.cand-card.sindaco .cand-photo{aspect-ratio:3/4;object-position:top}
+.cand-card.sindaco .cand-info{display:flex;flex-direction:column;justify-content:center;padding:2rem 1.75rem}
+.sbadge{display:inline-block;background:var(--oro);color:var(--testo);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .6rem;border-radius:100px;margin-bottom:.75rem}
+.cand-card.sindaco .fn{font-size:1.1rem;font-weight:400;color:var(--testo2)}
+.cand-card.sindaco .ln{font-size:1.65rem}
+@media(max-width:900px){.cand-grid{grid-template-columns:repeat(3,1fr)}.cand-card.sindaco{grid-column:span 3}}
+@media(max-width:580px){
+  .cand-grid{grid-template-columns:repeat(2,1fr)}
+  .cand-card.sindaco{grid-column:span 2;grid-template-columns:1fr;text-align:center}
+  .cand-card.sindaco .cand-photo{aspect-ratio:1}
+  .cand-card.sindaco .cand-info{padding:1.25rem}
+}
 
-    /* ── VOTO ── */
-    #voto {
-      background: linear-gradient(135deg, var(--blu-sc) 0%, var(--blu) 100%);
-      color: var(--bianco);
-      text-align: center;
-      padding: 6rem 1.5rem;
-    }
-    #voto .section-label { color: var(--oro); }
-    #voto .section-title { color: var(--bianco); }
-    #voto .section-title span { color: var(--oro); }
-    #voto .divider { margin: 1rem auto 2rem; }
-    .voto-date {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin: 2.5rem 0;
-    }
-    .voto-day {
-      background: rgba(255,255,255,.1);
-      border: 2px solid var(--oro);
-      border-radius: 1rem;
-      padding: 1.5rem 2.5rem;
-      min-width: 160px;
-    }
-    .voto-day .gg { font-size: 3rem; font-weight: 800; color: var(--oro); line-height: 1; }
-    .voto-day .mese { font-size: 1.1rem; font-weight: 600; opacity: .85; text-transform: uppercase; letter-spacing: .08em; }
-    .voto-day .anno { font-size: .9rem; opacity: .6; margin-top: .25rem; }
-    #voto p { font-size: 1.1rem; opacity: .85; max-width: 560px; margin: 0 auto 2rem; }
-    .btn-vota {
-      display: inline-block;
-      background: var(--oro);
-      color: var(--testo);
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      padding: .9rem 2.5rem;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .btn-vota:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,192,64,.5); }
+/* ── TUTTI BANNER ── */
+.tutti-banner{width:100%;border-radius:1.25rem;display:block;box-shadow:0 8px 32px rgba(0,0,0,.12);margin-bottom:2.5rem}
 
-    /* ── FOOTER ── */
-    footer {
-      background: #0a1833;
-      color: rgba(255,255,255,.55);
-      text-align: center;
-      padding: 2.5rem 1.5rem;
-      font-size: .85rem;
-    }
-    footer a { color: var(--oro); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    footer strong { color: rgba(255,255,255,.8); }
-    .footer-logo { margin-bottom: 1rem; }
-    .footer-logo img {
-      height: 60px;
-      border-radius: 50%;
-      border: 2px solid rgba(240,192,64,.4);
-    }
-    .footer-sep { margin: .75rem 0; opacity: .3; border: none; border-top: 1px solid currentColor; }
-  </style>
+/* ── SOCIAL ── */
+#social{background:var(--blu-s);color:#fff;padding:5.5rem 1.5rem}
+#social .stitle{color:#fff}
+#social .stitle span{color:var(--oro)}
+#social .lead{color:rgba(255,255,255,.72)}
+.social-links{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem}
+.social-btn{display:inline-flex;align-items:center;gap:.55rem;padding:.7rem 1.5rem;border-radius:100px;font-size:.88rem;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s;letter-spacing:.03em}
+.social-btn:hover{transform:translateY(-2px)}
+.social-btn.fb{background:#1877f2;color:#fff;box-shadow:0 4px 16px rgba(24,119,242,.4)}
+.social-btn.fb:hover{box-shadow:0 8px 24px rgba(24,119,242,.6)}
+.social-btn.lista{background:var(--oro);color:var(--testo);box-shadow:0 4px 16px rgba(240,192,64,.35)}
+.social-btn.lista:hover{box-shadow:0 8px 24px rgba(240,192,64,.55)}
+.fb-embeds{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem}
+.fb-embed-col{display:flex;flex-direction:column;gap:.75rem}
+.fb-embed-col h3{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--oro);margin-bottom:.25rem}
+.fb-frame{background:rgba(255,255,255,.05);border-radius:1rem;padding:1.5rem;min-height:500px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.75rem;border:1px solid rgba(255,255,255,.1)}
+.fb-frame-note{font-size:.8rem;color:rgba(255,255,255,.45);text-align:center;line-height:1.5}
+.fb-frame .fb-page,.fb-frame .fb-video{margin:0 auto}
+@media(max-width:800px){.fb-embeds{grid-template-columns:1fr}}
+
+/* ── VOTO ── */
+#voto{background:linear-gradient(135deg,var(--blu-m) 0%,var(--blu) 100%);color:#fff;text-align:center;padding:7rem 1.5rem}
+#voto .tag{justify-content:center}
+#voto p{font-size:1.05rem;opacity:.85;max-width:560px;margin:0 auto 2rem}
+.voto-days{display:flex;justify-content:center;gap:1.5rem;margin:2.25rem 0 3rem;flex-wrap:wrap}
+.vday{background:rgba(255,255,255,.08);border:2px solid var(--oro);border-radius:1rem;padding:1.75rem 2.5rem;min-width:165px}
+.vday .gg{font-size:3.5rem;font-weight:900;color:var(--oro);line-height:1}
+.vday .mm{font-size:.95rem;font-weight:600;opacity:.85;text-transform:uppercase;letter-spacing:.1em}
+.vday .dd{font-size:.75rem;opacity:.5;margin-top:.2rem;letter-spacing:.05em}
+.btn-fb{display:inline-flex;align-items:center;gap:.5rem;background:var(--oro);color:var(--testo);font-size:.88rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.85rem 2.1rem;border-radius:100px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn-fb:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(240,192,64,.5)}
+
+/* ── FOOTER ── */
+footer{background:var(--blu-s);color:rgba(255,255,255,.48);text-align:center;padding:3rem 1.5rem;font-size:.82rem}
+.ft-logo{margin-bottom:1.2rem}
+.ft-logo img{height:64px;border-radius:50%}
+footer strong{color:rgba(255,255,255,.78)}
+footer a{color:var(--oro);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.ft-sep{border:none;border-top:1px solid rgba(255,255,255,.1);margin:1.1rem 0}
+</style>
 </head>
 <body>
 
-<!-- ════ HEADER ════ -->
+<div id="fb-root"></div>
+
+<!-- HEADER -->
 <header>
   <div class="nav-inner">
-    <a class="nav-brand" href="#hero">
+    <a class="nav-brand" href="#top">
+      <img class="nav-logo" src="content/Logo%20Portico%20in%20Comune/LogoPorticoinComune.jpg" alt="Portico in Comune"/>
       <div class="nav-brand-text">
         <strong>Cosimo Cristillo</strong>
         <span>Portico in Comune</span>
       </div>
     </a>
     <nav>
-      <a href="#manifesto">Il Progetto</a>
-      <a href="#impegni">Impegni</a>
-      <a href="#lista">La Lista</a>
-      <a href="#voto">Vota</a>
+      <a href="#intro">Il Progetto</a>
+      <a href="#comune">Programma</a>
+      <a href="#giorni">100 Giorni</a>
+      <a href="#candidati">La Squadra</a>
+      <a href="#social">Social</a>
+      <a href="#voto" class="nav-cta">Vota</a>
     </nav>
   </div>
 </header>
 
-<!-- ════ HERO ════ -->
-<section class="hero" id="hero">
+<!-- HERO -->
+<section class="hero" id="top">
   <div class="hero-bg"></div>
-  <div class="hero-content">
+  <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-badge">Lista civica &bull; Portico in Comune</div>
-      <h1 class="hero-nome">
-        Cosimo<br>
-        <span>Cristillo</span>
-      </h1>
-      <p class="hero-ruolo">Candidato Sindaco &mdash; Portico di Caserta</p>
-      <p class="hero-slogan">
-        Facciamo<br>
-        <em>funzionare</em><br>
-        le cose.
-      </p>
-      <div class="hero-data">
-        <span class="icon">&#128197;</span>
-        <span>24 e 25 Maggio 2026 &mdash; Elezioni Comunali</span>
+      <div class="hero-top">
+        <img src="content/Logo%20Portico%20in%20Comune/LOGO%20%20PORTICO%20in%20COMUNE%20web.png" alt="Portico in Comune"/>
+        <span class="hero-lista">Lista Civica &middot; Portico in Comune</span>
+      </div>
+      <h1 class="hero-nome">Cosimo<span>Cristillo</span></h1>
+      <p class="hero-ruolo">Candidato Sindaco &middot; Portico di Caserta</p>
+      <p class="hero-slogan">Facciamo<br><em>funzionare</em><br>le cose.</p>
+      <div class="hero-meta">
+        <span>&#128197; 24 e 25 Maggio 2026</span>
+        <span>&#127963; Elezioni Comunali di Portico di Caserta</span>
       </div>
     </div>
     <div class="hero-photo-wrap">
-      <img
-        class="hero-photo"
-        src="img/679213198_4490088111263921_1136946669613006170_n.jpg"
-        alt="Cosimo Cristillo candidato sindaco Portico di Caserta"
-      />
+      <img class="hero-photo" src="content/Foto%20Cosimo%20Cristillo%20Sindaco/CosimoCristillo.jpg" alt="Cosimo Cristillo candidato sindaco Portico di Caserta"/>
     </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,45 C480,90 960,0 1440,45 L1440,70 L0,70 Z" fill="#ffffff"/>
+    </svg>
   </div>
 </section>
 
-<!-- Wave -->
-<div class="wave" style="background:var(--blu-sc)">
-  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-    <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="#f4f6fb"/>
-  </svg>
-</div>
-
-<!-- ════ MANIFESTO ════ -->
-<section id="manifesto">
+<!-- INTRO -->
+<section class="sec" id="intro">
   <div class="container">
-    <div class="manifesto-grid">
-      <div class="manifesto-body">
-        <p class="section-label">Il nostro progetto</p>
-        <h2 class="section-title">Un lavoro fatto<br>in <span>silenzio</span>,<br>ora pubblico.</h2>
-        <div class="divider"></div>
-
-        <p>Abbiamo depositato la lista. Da questo momento <strong>«Portico in Comune»</strong> è ufficialmente in campo.</p>
-        <p>Non è solo un passaggio formale. È il punto in cui un lavoro fatto in silenzio diventa pubblico. Persone, idee, impegno: tutto prende forma.</p>
-
-        <div class="manifesto-quote">
-          «In questi mesi abbiamo costruito una squadra vera. Persone diverse, con esperienze e competenze, unite da una scelta semplice: metterci la faccia per Portico.»
-        </div>
-
-        <p>Oggi il nostro simbolo non è solo un'immagine — è il segno di un percorso che <strong>parte da lontano e guarda avanti</strong>.</p>
-        <p>Affronteremo la campagna elettorale per come siamo stati fin dall'inizio: con <strong>serietà</strong>, con <strong>presenza</strong>, senza promesse vuote.</p>
-      </div>
-      <div class="manifesto-img">
-        <img
-          src="img/679615780_4490087901263942_7908930859783692416_n.jpg"
-          alt="Cosimo Cristillo – Facciamo funzionare le cose"
-        />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════ IMPEGNI ════ -->
-<section id="impegni">
-  <div class="container">
-    <p class="section-label">I nostri impegni</p>
-    <h2 class="section-title">Quello che serve <span>davvero</span></h2>
-    <div class="divider"></div>
-    <p style="margin-bottom:2.5rem;max-width:620px;color:#555;">
-      Il nostro obiettivo è chiaro: far funzionare le cose. E farlo subito, partendo da ciò che la comunità chiede ogni giorno.
-    </p>
-    <div class="cards">
-      <div class="card">
-        <div class="card-icon">&#127963;</div>
-        <h3>Un Comune che risponde</h3>
-        <p>Uffici più efficienti, tempi certi, risposte concrete ai cittadini. La burocrazia al servizio delle persone, non il contrario.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#9881;&#65039;</div>
-        <h3>Servizi più semplici</h3>
-        <p>Procedure chiare e accessibili, sportelli vicini alle esigenze reali, digitalizzazione dove può aiutare davvero.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#127757;</div>
-        <h3>Spazi che tornano a vivere</h3>
-        <p>Aree verdi, luoghi di aggregazione e spazi pubblici curati: restituire vita e dignità al territorio di Portico di Caserta.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#129309;</div>
-        <h3>Una squadra vera</h3>
-        <p>Non una lista raccolta all'ultimo momento: persone diverse con competenze complementari, pronte a lavorare insieme per la città.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#128219;</div>
-        <h3>Serietà e presenza</h3>
-        <p>Niente promesse vuote. Solo obiettivi realizzabili, con un programma chiaro e la volontà di essere presenti ogni giorno.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#128200;</div>
-        <h3>Risultati concreti</h3>
-        <p>Partire subito da ciò che funziona e migliorare ciò che non va: un approccio pragmatico al governo della città.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════ LISTA ════ -->
-<section id="lista">
-  <div class="container">
-    <div class="lista-content">
+    <div class="prog-grid">
       <div>
-        <p class="section-label">Chi siamo</p>
-        <h2 class="section-title">La lista <span>Portico in Comune</span></h2>
-        <div class="divider"></div>
-        <p>
-          «Portico in Comune» è una lista civica nata dalla comunità, per la comunità. Non è la somma di tessere di partito, ma di persone che hanno scelto di <strong>metterci la faccia</strong>.
-        </p>
-        <p>
-          Il nostro simbolo — le onde blu che guardano avanti — rappresenta un percorso che parte da lontano e si proietta nel futuro di Portico di Caserta.
-        </p>
-        <p>
-          Oggi depositiamo la lista. Il lavoro vero <strong>comincia adesso</strong>. Noi ci siamo.
-        </p>
+        <img src="content/Foto%20Cosimo%20Cristillo%20Sindaco/CosimoCristillo1.jpg" alt="Cosimo Cristillo" style="width:100%;border-radius:1.25rem;box-shadow:0 12px 48px rgba(26,86,196,.14);display:block"/>
       </div>
-      <div class="lista-img">
-        <img
-          src="img/678349789_4490090987930300_8383034056165665_n.jpg"
-          alt="Deposito della lista Portico in Comune"
-        />
+      <div class="prog-body">
+        <span class="tag">Il nostro impegno</span>
+        <h2 class="stitle">Portico deve<br><span>ripartire.</span></h2>
+        <div class="bar"></div>
+        <p>Non è uno slogan, è una necessità che tutti vediamo ogni giorno. Negli ultimi anni il paese ha rallentato, ha perso occasioni, ha smesso di crescere come poteva. Strade, servizi, spazi pubblici: troppe cose sono rimaste ferme. E quando un paese si ferma, non perde solo tempo. Perde fiducia.</p>
+        <div class="qblock">«Non parole, ma scelte. Il punto non è più raccontare cosa si farà, ma iniziare a farlo davvero.»</div>
+        <p>Portico ha energie, ha persone, ha una comunità che chiede di essere ascoltata e rispettata nei fatti. La priorità è rimettere il Comune in funzione: valorizzare chi già lavora all'interno, rafforzare la struttura, rendere gli uffici più efficienti.</p>
+        <p>A questo impegno diamo subito una forma concreta: un elenco chiaro di interventi nei <strong>primi cento giorni</strong>. Non un annuncio, ma un atto di responsabilità con obiettivi definiti e tempi verificabili.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════ VOTO ════ -->
+<!-- PILASTRI NAV -->
+<section class="sec-sm" id="pilastri">
+  <div class="container">
+    <div class="pilastri-grid">
+      <a class="pilastro" href="#comune">
+        <span class="pi">&#9881;&#65039;</span>
+        <h3>Un Comune che funziona</h3>
+        <p>Servizi digitali, sportelli dedicati, trasparenza e risposta ai cittadini</p>
+      </a>
+      <a class="pilastro" href="#vita">
+        <span class="pi">&#127963;</span>
+        <h3>Ridare vita a Portico</h3>
+        <p>Piazze, scuola, giovani, anziani, commercio e cultura locale</p>
+      </a>
+      <a class="pilastro" href="#opere">
+        <span class="pi">&#128296;</span>
+        <h3>Sbloccare le opere</h3>
+        <p>Cantieri fermi, teatro, strade, zona industriale e PUC</p>
+      </a>
+      <a class="pilastro" href="#giorni">
+        <span class="pi">&#128203;</span>
+        <h3>I Primi 100 Giorni</h3>
+        <p>Piano operativo con obiettivi definiti e tempi verificabili</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- UN COMUNE CHE FUNZIONA -->
+<section class="sec" id="comune">
+  <div class="container">
+    <span class="tag">Pilastro 1</span>
+    <h2 class="stitle">Un Comune che <span>funziona</span></h2>
+    <div class="bar"></div>
+    <p class="lead">Far funzionare il Comune è il primo vero atto politico. Senza un'amministrazione che lavora e risponde, nessun progetto può reggere nel tempo.</p>
+    <div class="prog-grid">
+      <div class="prog-body">
+        <p>La macchina comunale ha bisogno di essere rafforzata. Pochi dipendenti, un'organizzazione fragile, servizi che faticano a stare al passo. L'obiettivo è rimettere il Comune nelle condizioni di funzionare davvero.</p>
+        <p>Il <strong>potenziamento dei servizi digitali</strong> sarà centrale: SPID, Carta d'Identità Elettronica, richieste online. Ma senza lasciare indietro nessuno: rafforzeremo gli sportelli fisici in collaborazione con CAF e patronati del territorio.</p>
+        <p>Attiveremo un <strong>canale WhatsApp istituzionale</strong> per segnalare problemi in tempo reale e ricevere aggiornamenti. Costruiremo un <strong>Comune più giusto</strong>: pagamenti flessibili, rateizzazioni chiare, regolarizzazione spontanea dei tributi.</p>
+        <p>Istituiremo uno <strong>Sportello Sociale</strong> per mappare i bisogni reali, uno <strong>Sportello Disabili</strong> come punto stabile di ascolto per le famiglie, e un <strong>Punto Donna</strong> come spazio sicuro di orientamento e tutela.</p>
+      </div>
+      <div class="prog-box">
+        <h4>Interventi concreti</h4>
+        <ul>
+          <li>Digitalizzazione servizi con SPID e CIE</li>
+          <li>Canale WhatsApp istituzionale attivo</li>
+          <li>Punto Digitale per assistere i cittadini</li>
+          <li>Sportello Sociale – mappatura bisogni</li>
+          <li>Sportello Disabili – ascolto e orientamento</li>
+          <li>Punto Donna – spazio sicuro e accessibile</li>
+          <li>Ufficio legale e riduzione contenziosi</li>
+          <li>Pagamento tributi flessibile con rateizzazioni</li>
+          <li>Collaborazione con CAF e patronati</li>
+          <li>Aula consiliare digitale e streaming live</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RIDARE VITA A PORTICO -->
+<section class="sec" id="vita" style="background:var(--grigio)">
+  <div class="container">
+    <span class="tag">Pilastro 2</span>
+    <h2 class="stitle">Ridare vita a <span>Portico</span></h2>
+    <div class="bar"></div>
+    <p class="lead">Un paese vive quando i suoi spazi, le sue energie e le sue relazioni tornano a muoversi. Il decoro urbano è il primo segnale di rispetto verso i cittadini.</p>
+    <div class="prog-grid flip">
+      <div class="prog-box">
+        <h4>Spazi, persone e comunità</h4>
+        <ul>
+          <li>Riapertura Piazza Berlinguer alla comunità</li>
+          <li>Riqualificazione e valorizzazione Piazza degli Artisti</li>
+          <li>Sostegno attività di Piazza Rimembranza</li>
+          <li>Riapertura Campo Sportivo</li>
+          <li>Polisportiva e rete sportiva multidisciplina</li>
+          <li>Forum dei Giovani – spazio reale di partecipazione</li>
+          <li>Consiglio Comunale dei Ragazzi</li>
+          <li>Programma UNICEF – Città Amica dei Bambini</li>
+          <li>Circolo Anziani riaperto in Piazza Rimembranza</li>
+          <li>Bocciodromo e spazio anziani a Musicile</li>
+          <li>Progetto Nonni Civici – tutela aree verdi</li>
+          <li>Assistenza domiciliare e consegna medicinali</li>
+          <li>Mesi di prevenzione sanitaria gratuita</li>
+          <li>Consulta permanente commercianti e artigiani</li>
+          <li>Area mercato attrezzata e fiera settimanale</li>
+          <li>Nuovo bando raccolta rifiuti efficiente</li>
+          <li>Piano traffico condiviso con i cittadini</li>
+          <li>Baratto amministrativo per beni comuni</li>
+          <li>Interventi nelle aree di Musicile e via Mazzini</li>
+        </ul>
+      </div>
+      <div class="prog-body">
+        <p>Portico ha troppe aree abbandonate, troppi luoghi che potrebbero essere vissuti e non lo sono. Vogliamo <strong>ripartire dai luoghi</strong>: dal loro recupero, dalla loro cura e dalla loro funzione.</p>
+        <p>Le piazze devono tornare a essere il cuore della comunità. <strong>Piazza Berlinguer</strong> va riaperta e restituita, <strong>Piazza degli Artisti</strong> riqualificata, <strong>Piazza Rimembranza</strong> sostenuta con iniziative concrete che riportino vita nel centro del paese.</p>
+        <p>Ridare vita a Portico significa soprattutto investire sui <strong>giovani</strong>: Forum dei Giovani, Consiglio dei Ragazzi, luoghi di aggregazione, sport, adozione del programma UNICEF. E allo stesso tempo riconoscere il ruolo degli <strong>anziani</strong>, valorizzandone l'esperienza attraverso i Nonni Civici.</p>
+        <p>Il commercio locale merita supporto: una <strong>Consulta permanente</strong>, un'area mercato organizzata, una fiera settimanale degna di questo nome. Perché ridare vita a Portico significa rimettere in movimento spazi, attività e relazioni.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCUOLA E CULTURA -->
+<section class="sec" id="scuola">
+  <div class="container">
+    <span class="tag">Scuola e Cultura</span>
+    <h2 class="stitle">La scuola: una priorità <span>non rinviabile</span></h2>
+    <div class="bar"></div>
+    <p class="lead">La scuola di via Principe di Piemonte è il simbolo più evidente di un fallimento. Un edificio abbattuto e, dopo anni, ancora un cantiere aperto. Su questo non ci saranno più ritardi, né giustificazioni.</p>
+    <div class="prog-grid">
+      <div class="prog-body">
+        <p><strong>La prima cosa sarà un'operazione verità.</strong> I cittadini hanno il diritto di sapere cosa è successo, perché i lavori sono fermi e di chi sono le responsabilità. Poi tempi certi con un cronoprogramma pubblico e verificabile.</p>
+        <p>Avvieremo un piano immediato di <strong>riqualificazione degli edifici scolastici</strong>: scuola media di via Trento, plessi dell'infanzia di via Collodi, strutture di Musicile. Non solo manutenzione, ma restituire dignità agli spazi in cui crescono i nostri ragazzi.</p>
+        <p>Attiveremo finalmente l'<strong>asilo nido di via Collodi</strong>, inaugurato ma mai realmente aperto. Un servizio fondamentale per le famiglie non può restare inutilizzato.</p>
+        <p>Sul fronte <strong>culturale</strong>: sosterremo l'archivio digitale dei Canti di Sant'Antuono, costruiremo un programma annuale attorno alla Festa di Sant'Antonio Abate, istituiremo la Consulta delle associazioni e realizzeremo una <strong>biblioteca comunale</strong> con sale lettura e spazi studio.</p>
+      </div>
+      <div class="prog-box" style="background:var(--grigio)">
+        <h4>Scuola e cultura</h4>
+        <ul>
+          <li>Operazione verità – scuola via Principe di Piemonte</li>
+          <li>Cronoprogramma lavori pubblico e verificabile</li>
+          <li>Restyling urgente scuola media via Trento</li>
+          <li>Riqualificazione plessi infanzia via Collodi</li>
+          <li>Riqualificazione strutture scolastiche Musicile</li>
+          <li>Attivazione asilo nido via Collodi</li>
+          <li>Contrasto al bullismo e disagio giovanile</li>
+          <li>Archivio digitale Canti di Sant'Antuono (Pro Loco)</li>
+          <li>Programma annuale Festa Sant'Antonio Abate</li>
+          <li>Biblioteca comunale con sale studio</li>
+          <li>Consulta delle associazioni culturali</li>
+          <li>Calendario culturale annuale condiviso</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SBLOCCARE LE OPERE -->
+<section class="sec sec-dark" id="opere">
+  <div class="container">
+    <span class="tag light">Pilastro 3</span>
+    <h2 class="stitle on-dark">Sbloccare le opere,<br><span>costruire il futuro</span></h2>
+    <div class="bar"></div>
+    <p class="lead light">Portico oggi è ferma. Cantieri aperti da anni, opere incompiute, interventi mai conclusi. La priorità è chiudere ciò che è rimasto aperto troppo a lungo.</p>
+    <div class="prog-grid">
+      <div class="prog-body">
+        <p>Non è più accettabile che il <strong>Teatro Comunale</strong> resti incompiuto. Deve essere completato e diventare il centro della vita culturale di Portico: uno spazio vivo, aperto, capace di ospitare eventi e formazione.</p>
+        <p>Le strade sono in condizioni inaccettabili. Interverremo con un <strong>piano di manutenzione e decoro urbano</strong> con cronoprogramma chiaro e verificabile. Gli allagamenti non possono più essere considerati un problema ciclico: il <strong>sistema fognario</strong> sarà affrontato in modo definitivo.</p>
+        <p>Il <strong>Piano Urbanistico Comunale</strong> tornerà a essere uno strumento di governo, non solo tecnico ma politico: programmazione dello sviluppo urbano, tutela del territorio, condizioni certe per cittadini e imprese.</p>
+        <p>La <strong>Zona Industriale</strong> sarà potenziata con servizi, sicurezza e viabilità. Il <strong>Centro Polifunzionale</strong> diventerà il cuore dello sviluppo: Agenzia Giovani, Sportello Imprese, formazione, inserimento lavorativo.</p>
+      </div>
+      <div class="prog-box dark">
+        <h4>Opere e infrastrutture</h4>
+        <ul>
+          <li>Completamento Teatro Comunale</li>
+          <li>Piano manutenzione strade con cronoprogramma</li>
+          <li>Risoluzione definitiva sistema fognario</li>
+          <li>Riapertura Campo Sportivo nel più breve tempo</li>
+          <li>Piano Urbanistico Comunale aggiornato</li>
+          <li>Miglioramento illuminazione pubblica</li>
+          <li>Viabilità e segnaletica zona industriale</li>
+          <li>Videosorveglianza sul territorio</li>
+          <li>Centro Polifunzionale – Agenzia Giovani</li>
+          <li>Sportello Imprese (finanziamenti, bandi)</li>
+          <li>Sala convegni e spazi formazione</li>
+          <li>Collegamento sviluppo economico e formazione</li>
+          <li>Riqualificazione aree Musicile e via Mazzini</li>
+          <li>Baratto amministrativo per beni comuni</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- I PRIMI 100 GIORNI -->
+<section class="sec" id="giorni">
+  <div class="container">
+    <span class="tag light">Piano operativo</span>
+    <h2 class="stitle on-dark">I Primi <span>100 Giorni</span></h2>
+    <div class="bar"></div>
+    <p class="lead light">Un metodo di governo basato su priorità definite, atti concreti e tempi verificabili. Quattro direzioni chiare dentro cui si collocano tutte le scelte iniziali.</p>
+    <div class="giorni-grid">
+      <div class="gcol">
+        <h3>1. Il Comune riparte</h3>
+        <ul>
+          <li>Canale WhatsApp istituzionale</li>
+          <li>Punto Digitale per i cittadini</li>
+          <li>Attivazione Punto Donna</li>
+          <li>Attivazione Sportello Disabili</li>
+          <li>Aula consiliare digitale e streaming</li>
+        </ul>
+      </div>
+      <div class="gcol">
+        <h3>2. Diciamo la verità</h3>
+        <ul>
+          <li>Operazione verità scuola Principe di Piemonte</li>
+          <li>Verifica e attivazione asilo nido via Collodi</li>
+          <li>Cronoprogramma lavori scuola pubblico</li>
+          <li>Mappatura cantieri e opere incompiute</li>
+        </ul>
+      </div>
+      <div class="gcol">
+        <h3>3. Riapriamo i luoghi</h3>
+        <ul>
+          <li>Riapertura Piazza Berlinguer</li>
+          <li>Attivazione Centro Polifunzionale</li>
+          <li>Avvio restyling zona industriale</li>
+          <li>Avvio completamento Teatro Comunale</li>
+          <li>Riapertura Campo Sportivo</li>
+        </ul>
+      </div>
+      <div class="gcol">
+        <h3>4. Le persone al centro</h3>
+        <ul>
+          <li>Forum dei Giovani</li>
+          <li>Consiglio Comunale dei Ragazzi</li>
+          <li>Cartellone estivo &ldquo;Portico C&rsquo;&eacute;&rdquo;</li>
+          <li>Riapertura Circolo Anziani in piazza</li>
+          <li>Spazio anziani a Musicile</li>
+          <li>Consulta delle associazioni</li>
+          <li>Consulta commercianti e artigiani</li>
+          <li>Programma culturale annuale</li>
+          <li>Progetto Nonni Civici</li>
+        </ul>
+      </div>
+      <div class="gcol">
+        <h3>5. Sicurezza e decoro</h3>
+        <ul>
+          <li>Piano manutenzione strade</li>
+          <li>Restyling plessi scolastici</li>
+          <li>Pulizia caditoie</li>
+          <li>Verifica sistema idrico</li>
+          <li>Attivazione videosorveglianza</li>
+          <li>Interventi rete fognaria</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CANDIDATI -->
+<section class="sec" id="candidati">
+  <div class="container">
+    <span class="tag">La squadra</span>
+    <h2 class="stitle">Lista <span>Portico in Comune</span></h2>
+    <div class="bar"></div>
+    <p class="lead">Dodici consiglieri candidati insieme a Cosimo Cristillo. Persone diverse, con esperienze e competenze, unite da una scelta semplice: metterci la faccia per Portico.</p>
+    <img class="tutti-banner" src="content/tutti.png" alt="Tutta la squadra – Portico in Comune con Cosimo Cristillo Sindaco"/>
+    <div class="cand-grid">
+
+      <!-- SINDACO -->
+      <div class="cand-card sindaco">
+        <img class="cand-photo" src="content/Foto%20Cosimo%20Cristillo%20Sindaco/CosimoCristillo.jpg" alt="Cosimo Cristillo Sindaco"/>
+        <div class="cand-info">
+          <span class="sbadge">Candidato Sindaco</span>
+          <div class="fn">Cosimo</div>
+          <div class="ln">Cristillo</div>
+        </div>
+      </div>
+
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/LuigiBellopede.jpg" alt="Luigi Bellopede"/>
+        <div class="cand-info"><div class="fn">Luigi</div><div class="ln">Bellopede</div><div class="num">n&deg; 1 &middot; Giggino</div></div>
+      </div>
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/GiuseppeCicala.jpg" alt="Giuseppe Cicala"/>
+        <div class="cand-info"><div class="fn">Giuseppe</div><div class="ln">Cicala</div><div class="num">n&deg; 2 &middot; Peppe</div></div>
+      </div>
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/ConcettaFalcone.jpg" alt="Concetta Falcone"/>
+        <div class="cand-info"><div class="fn">Concetta</div><div class="ln">Falcone</div><div class="num">n&deg; 3</div></div>
+      </div>
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/GiovanniIodice.jpg" alt="Giovanni Iodice"/>
+        <div class="cand-info"><div class="fn">Giovanni</div><div class="ln">Iodice</div><div class="num">n&deg; 4 &middot; Gianni</div></div>
+      </div>
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/AntonioMassaro.jpg" alt="Antonio Massaro"/>
+        <div class="cand-info"><div class="fn">Antonio</div><div class="ln">Massaro</div><div class="num">n&deg; 5</div></div>
+      </div>
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/GerardoMassaro.jpg" alt="Gerardo Massaro"/>
+        <div class="cand-info"><div class="fn">Gerardo</div><div class="ln">Massaro</div><div class="num">n&deg; 6</div></div>
+      </div>
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/ElisabettaMerola.jpg" alt="Elisabetta Merola"/>
+        <div class="cand-info"><div class="fn">Elisabetta</div><div class="ln">Merola</div><div class="num">n&deg; 7 &middot; Lisa</div></div>
+      </div>
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/GiusyMerola.jpg" alt="Giusy Merola"/>
+        <div class="cand-info"><div class="fn">Giusy</div><div class="ln">Merola</div><div class="num">n&deg; 8 &middot; Giusi</div></div>
+      </div>
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/PatriziaMorrone.jpg" alt="Patrizia Morrone"/>
+        <div class="cand-info"><div class="fn">Patrizia</div><div class="ln">Morrone</div><div class="num">n&deg; 9</div></div>
+      </div>
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/GiuseppePascarella.jpg" alt="Giuseppe Pascarella"/>
+        <div class="cand-info"><div class="fn">Giuseppe</div><div class="ln">Pascarella</div><div class="num">n&deg; 10 &middot; Maresciallo</div></div>
+      </div>
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/LuigiPiccirillo.jpg" alt="Luigi Piccirillo"/>
+        <div class="cand-info"><div class="fn">Luigi</div><div class="ln">Piccirillo</div><div class="num">n&deg; 11</div></div>
+      </div>
+      <div class="cand-card">
+        <img class="cand-photo" src="content/Foto%20candidati/MariaPiccirillo.jpg" alt="Maria Piccirillo"/>
+        <div class="cand-info"><div class="fn">Maria</div><div class="ln">Piccirillo</div><div class="num">n&deg; 12</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section id="social">
+  <div class="container" style="text-align:center">
+    <span class="tag light" style="justify-content:center;display:inline-flex">&#128172; Seguici sui Social</span>
+    <h2 class="stitle" style="text-align:center">Restaci <span>vicino</span></h2>
+    <div class="bar center"></div>
+    <p class="lead" style="margin:0 auto 2rem">Seguici sulle pagine Facebook per aggiornamenti quotidiani, eventi e contenuti della campagna elettorale.</p>
+    <div class="social-links">
+      <a class="social-btn lista" href="https://www.facebook.com/porticoincomune" target="_blank" rel="noopener">
+        &#128140; Portico in Comune – Pagina ufficiale
+      </a>
+      <a class="social-btn fb" href="https://www.facebook.com/cosimo.cristillo.3" target="_blank" rel="noopener">
+        &#128100; Cosimo Cristillo – Profilo candidato
+      </a>
+    </div>
+    <div class="fb-embeds">
+      <div class="fb-embed-col">
+        <h3>&#128462; Pagina Portico in Comune</h3>
+        <div class="fb-frame">
+          <div class="fb-page"
+            data-href="https://www.facebook.com/porticoincomune"
+            data-tabs="timeline"
+            data-width="450"
+            data-height="500"
+            data-small-header="true"
+            data-adapt-container-width="true"
+            data-hide-cover="false"
+            data-show-facepile="false">
+          </div>
+          <p class="fb-frame-note">Gli embed Facebook richiedono connessione internet<br>e un dominio web (non funzionano in locale su file://)</p>
+        </div>
+      </div>
+      <div class="fb-embed-col">
+        <h3>&#127909; Reel in evidenza</h3>
+        <div class="fb-frame">
+          <div class="fb-video"
+            data-href="https://www.facebook.com/share/r/1DqigJYmwo/"
+            data-width="450"
+            data-show-text="false"
+            data-allowfullscreen="true">
+          </div>
+          <p class="fb-frame-note">Reel ufficiale della campagna<br>Portico in Comune 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOTO -->
 <section id="voto">
   <div class="container">
-    <p class="section-label">Elezioni Comunali 2026</p>
-    <h2 class="section-title">Scegli il futuro di <span>Portico di Caserta</span></h2>
-    <div class="divider"></div>
-    <p>
-      Si vota per il Sindaco e i Consiglieri del Comune di Portico di Caserta.<br>
-      Segna la lista <strong>Portico in Comune</strong> e scrivi <strong>Cosimo Cristillo</strong>.
-    </p>
-    <div class="voto-date">
-      <div class="voto-day">
-        <div class="gg">24</div>
-        <div class="mese">Maggio</div>
-        <div class="anno">2026 &mdash; Domenica</div>
-      </div>
-      <div class="voto-day">
-        <div class="gg">25</div>
-        <div class="mese">Maggio</div>
-        <div class="anno">2026 &mdash; Lunedì</div>
-      </div>
+    <span class="tag light" style="justify-content:center;display:flex;width:fit-content;margin:0 auto .75rem">&#128505; Elezioni Comunali 2026</span>
+    <h2 class="stitle on-dark" style="text-align:center">Scegli il futuro di<br><span>Portico di Caserta</span></h2>
+    <div class="bar center"></div>
+    <p>Segna <strong>Portico in Comune</strong> sulla scheda e scrivi <strong>Cosimo Cristillo</strong> come preferenza di voto.</p>
+    <div class="voto-days">
+      <div class="vday"><div class="gg">24</div><div class="mm">Maggio 2026</div><div class="dd">Domenica</div></div>
+      <div class="vday"><div class="gg">25</div><div class="mm">Maggio 2026</div><div class="dd">Luned&igrave;</div></div>
     </div>
-    <a href="https://www.facebook.com/cosimo.cristillo.3" target="_blank" rel="noopener" class="btn-vota">
-      Seguici su Facebook
-    </a>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn-fb" href="https://www.facebook.com/porticoincomune" target="_blank" rel="noopener">
+        &#128462; Portico in Comune
+      </a>
+      <a class="btn-fb" style="background:rgba(255,255,255,.15);color:#fff" href="https://www.facebook.com/cosimo.cristillo.3" target="_blank" rel="noopener">
+        &#128100; Cosimo Cristillo
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- ════ FOOTER ════ -->
+<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">
-    <img src="img/679213198_4490088111263921_1136946669613006170_n.jpg" alt="Cosimo Cristillo" />
+  <div class="ft-logo">
+    <img src="content/Logo%20Portico%20in%20Comune/LOGO%20%20PORTICO%20in%20COMUNE%20web.png" alt="Portico in Comune"/>
   </div>
-  <p><strong>Cosimo Cristillo Sindaco</strong> &mdash; Lista civica <strong>Portico in Comune</strong></p>
-  <p>Elezioni Comunali di Portico di Caserta &mdash; 24 e 25 Maggio 2026</p>
-  <hr class="footer-sep" />
+  <p><strong>Cosimo Cristillo Sindaco</strong> &middot; Lista civica <strong>Portico in Comune</strong></p>
+  <p>Elezioni Comunali Portico di Caserta &middot; 24 e 25 Maggio 2026</p>
+  <hr class="ft-sep"/>
   <p>
-    <a href="https://www.facebook.com/cosimo.cristillo.3" target="_blank" rel="noopener">Pagina Facebook</a>
-    &nbsp;&bull;&nbsp;
-    Materiale elettorale ai sensi della normativa vigente.
+    <a href="https://www.facebook.com/porticoincomune" target="_blank" rel="noopener">&#128462; Portico in Comune</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://www.facebook.com/cosimo.cristillo.3" target="_blank" rel="noopener">&#128100; Cosimo Cristillo</a>
   </p>
+  <p style="margin-top:.5rem;font-size:.75rem">Materiale elettorale ai sensi della normativa vigente.</p>
 </footer>
 
 </body>
