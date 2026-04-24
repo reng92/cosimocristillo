@@ -15,7 +15,10 @@
       "Bash(git ls-tree *)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "WebFetch(domain:nominatim.openstreetmap.org)",
+      "WebFetch(domain:overpass-api.de)",
+      "WebFetch(domain:en.wikipedia.org)"
     ]
   }
 }
