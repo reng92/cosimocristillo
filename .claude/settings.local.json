@@ -7,7 +7,15 @@
       "WebFetch(domain:www.tuttitalia.it)",
       "Bash(identify \"/c/Users/Ren92/cosimocristillo/content/tutti.png\")",
       "Bash(npm install *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(npm ls *)",
+      "Bash(pkill -f \"astro dev\")",
+      "Bash(pkill -f \"node.*astro\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/keystatic)",
+      "Bash(git ls-tree *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
