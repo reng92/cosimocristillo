@@ -12,13 +12,14 @@ const PROFILE_URL = 'https://www.facebook.com/cosimo.cristillo.3';
       <div class="social-text">
         <h3>Segui la campagna su Facebook</h3>
         <p>Aggiornamenti quotidiani sugli eventi, le iniziative e le novità di Portico in Comune. Partecipa alla conversazione e condividi con i tuoi amici.</p>
-        <a class="btn-social" href={PAGE_URL} target="_blank" rel="noopener">
-          &#128462; Portico in Comune
-        </a>
-        &nbsp;
-        <a class="btn-social" style="background:var(--blu-s);margin-top:.75rem" href={PROFILE_URL} target="_blank" rel="noopener">
-          &#128100; Cosimo Cristillo
-        </a>
+        <div class="social-btns">
+          <a class="btn-social" href={PAGE_URL} target="_blank" rel="noopener">
+            &#128462; Portico in Comune
+          </a>
+          <a class="btn-social btn-social-alt" href={PROFILE_URL} target="_blank" rel="noopener">
+            &#128100; Cosimo Cristillo
+          </a>
+        </div>
       </div>
       <div class="fb-widget-wrap">
         <div id="fb-root"></div>
@@ -26,9 +27,9 @@ const PROFILE_URL = 'https://www.facebook.com/cosimo.cristillo.3';
           class="fb-page"
           data-href={PAGE_URL}
           data-tabs="timeline"
-          data-width="380"
-          data-height="500"
-          data-small-header="true"
+          data-width="500"
+          data-height="600"
+          data-small-header="false"
           data-adapt-container-width="true"
           data-hide-cover="false"
           data-show-facepile="true">
@@ -38,13 +39,10 @@ const PROFILE_URL = 'https://www.facebook.com/cosimo.cristillo.3';
   </div>
 </section>
 
-<script>
-// Carica l'SDK Facebook solo dopo il consenso ai cookie analitici
-document.addEventListener('DOMContentLoaded', () => {
-  const consent = (() => { try { return JSON.parse(localStorage.getItem('pic_consent_v1')); } catch { return null; } })();
-  // Carichiamo il widget anche senza analytics (è un embed, non un tracker)
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
   if (window.FB) { window.FB.XFBML.parse(); return; }
-  const js = document.createElement('script');
+  var js = document.createElement('script');
   js.async = true;
   js.defer = true;
   js.crossOrigin = 'anonymous';
