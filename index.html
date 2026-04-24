@@ -35,13 +35,13 @@ nav a:hover{color:var(--oro)}
 .hero-bg{position:absolute;inset:0;background:url('content/Foto%20Cosimo%20Cristillo%20Sindaco/CosimoCristillo1.jpg')center/cover no-repeat;opacity:.07}
 .hero-wave{position:absolute;bottom:-1px;left:0;right:0;line-height:0}
 .hero-wave svg{display:block;width:100%}
-.hero-inner{position:relative;z-index:1;max-width:1180px;margin:auto;padding:7rem 1.5rem 9rem;display:grid;grid-template-columns:1.15fr 1fr;gap:3rem;align-items:center}
+.hero-inner{position:relative;z-index:1;max-width:1180px;margin:auto;padding:5rem 1.5rem 6rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
 .hero-text{color:#fff}
 .hero-top{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
 .hero-top img{height:54px}
 .hero-lista{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--oro)}
-h1.hero-nome{font-size:clamp(2.8rem,6vw,4.6rem);font-weight:900;line-height:1.05;letter-spacing:-.025em;margin-bottom:.5rem}
-h1.hero-nome span{color:var(--oro);display:block}
+h1.hero-nome{font-size:clamp(1.9rem,5vw,4rem);font-weight:900;line-height:1.1;letter-spacing:-.025em;margin-bottom:.5rem;white-space:nowrap}
+h1.hero-nome span{color:var(--oro)}
 .hero-ruolo{font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;opacity:.65;margin-bottom:1.75rem}
 .hero-slogan{font-size:clamp(1.3rem,3vw,1.85rem);font-weight:700;line-height:1.3;border-left:4px solid var(--oro);padding-left:1rem;margin-bottom:2.25rem}
 .hero-slogan em{color:var(--oro);font-style:normal}
@@ -49,15 +49,17 @@ h1.hero-nome span{color:var(--oro);display:block}
 .hero-meta span{display:flex;align-items:center;gap:.5rem}
 .hero-photo-wrap{display:flex;justify-content:center}
 .hero-video-wrap{display:flex;justify-content:center;align-items:center}
-.hero-video{width:min(280px,100%);aspect-ratio:9/16;object-fit:cover;border-radius:2rem;border:4px solid var(--oro);box-shadow:0 0 60px rgba(240,192,64,.25),0 24px 64px rgba(0,0,0,.6);display:block}
+.hero-video{width:min(420px,100%);aspect-ratio:9/16;object-fit:cover;border-radius:2rem;border:4px solid var(--oro);box-shadow:0 0 80px rgba(240,192,64,.3),0 24px 64px rgba(0,0,0,.6);display:block}
 @media(max-width:720px){
+  .hero{min-height:100svh}
+  .hero-bg-video{display:block!important;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22;z-index:0;pointer-events:none}
   .hero-inner{grid-template-columns:1fr;padding:5rem 1.5rem 7rem;text-align:center}
-  .hero-video-wrap{order:-1}
-  .hero-video{width:160px;border-radius:1.25rem}
+  .hero-video-wrap{display:none}
   .hero-top{justify-content:center}
   .hero-slogan{border-left:none;border-top:4px solid var(--oro);padding-left:0;padding-top:.75rem}
   .hero-meta{align-items:center}
 }
+.hero-bg-video{display:none}
 
 /* ── UTILS ── */
 .container{max-width:1180px;margin:auto}
@@ -121,8 +123,7 @@ h2.stitle.on-dark span{color:var(--oro)}
 .gcol li{font-size:.78rem;color:rgba(255,255,255,.82);line-height:1.35;padding-left:.85rem;position:relative}
 .gcol li::before{content:'→';position:absolute;left:0;color:var(--oro);font-size:.65rem;top:.05rem}
 @media(max-width:1080px){.giorni-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){.giorni-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:380px){.giorni-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.giorni-grid{grid-template-columns:1fr}}
 
 /* ── CANDIDATI ── */
 #candidati{background:var(--grigio)}
@@ -200,6 +201,9 @@ footer a:hover{text-decoration:underline}
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg"></div>
+  <video class="hero-bg-video" autoplay muted loop playsinline>
+    <source src="content/video.mp4" type="video/mp4"/>
+  </video>
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-top">
