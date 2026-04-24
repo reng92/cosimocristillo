@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Countdown from '../components/Countdown.astro';
-import Mappa from '../components/Mappa.astro';
 import FacebookEmbed from '../components/FacebookEmbed.astro';
 import { getCollection } from 'astro:content';
 
@@ -234,17 +233,6 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
       <div class="cand-card"><img class="cand-photo" src="/content/Foto%20candidati/LuigiPiccirillo.jpg" alt="Luigi Piccirillo"/><div class="cand-info"><div class="fn">Luigi</div><div class="ln">Piccirillo</div></div></div>
       <div class="cand-card"><img class="cand-photo" src="/content/Foto%20candidati/MariaPiccirillo.jpg" alt="Maria Piccirillo"/><div class="cand-info"><div class="fn">Maria</div><div class="ln">Piccirillo</div></div></div>
     </div>
-  </div>
-</section>
-
-<!-- MAPPA -->
-<section class="sec" id="mappa">
-  <div class="container">
-    <span class="tag">Il territorio</span>
-    <h2 class="stitle">Portico sui <span>punti chiave</span></h2>
-    <div class="bar"></div>
-    <p class="lead">Le aree del paese al centro del programma: luoghi da riqualificare, opere da sbloccare, servizi da attivare.</p>
-    <Mappa />
   </div>
 </section>
 
