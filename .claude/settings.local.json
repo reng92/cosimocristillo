@@ -4,7 +4,8 @@
       "WebFetch(domain:www.facebook.com)",
       "WebSearch",
       "WebFetch(domain:www.comune.porticodicaserta.ce.it)",
-      "WebFetch(domain:www.tuttitalia.it)"
+      "WebFetch(domain:www.tuttitalia.it)",
+      "Bash(identify \"/c/Users/Ren92/cosimocristillo/content/tutti.png\")"
     ]
   }
 }
