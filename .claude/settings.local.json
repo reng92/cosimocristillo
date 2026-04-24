@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.facebook.com)"
+      "WebFetch(domain:www.facebook.com)",
+      "WebSearch",
+      "WebFetch(domain:www.comune.porticodicaserta.ce.it)",
+      "WebFetch(domain:www.tuttitalia.it)"
     ]
   }
 }
