@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+export const prerender = true;
+
+const ora = new Date();
+const tutti = (await getCollection('eventi'))
+  .sort((a, b) => new Date(a.data.data).valueOf() - new Date(b.data.data).valueOf());
+
+const prossimi = tutti.filter(e => new Date(e.data.data) >= ora);
+const passati  = tutti.filter(e => new Date(e.data.data) < ora).reverse();
+
+function fmtDate(d: Date) {
+  return new Intl.DateTimeFormat('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(d));
+}
+function fmtDay(d: Date) { return new Intl.DateTimeFormat('it-IT', { day: 'numeric' }).format(new Date(d)); }
+function fmtMon(d: Date) { return new Intl.DateTimeFormat('it-IT', { month: 'short' }).format(new Date(d)); }
+---
+<Layout title="Calendario eventi – Portico in Comune" description="Tutti gli eventi della campagna di Cosimo Cristillo e Portico in Comune.">
+
+<header>
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">
+      <img class="nav-logo" src="/content/Logo%20Portico%20in%20Comune/LogoPorticoinComune.jpg" alt="Portico in Comune"/>
+      <div class="nav-brand-text"><strong>Cosimo Cristillo</strong><span>Portico in Comune</span></div>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/eventi">Eventi</a>
+      <a href="/#voto" class="nav-cta">Vota</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <h1>&#128197; Calendario eventi</h1>
+  <p>Comizi, incontri e iniziative della campagna</p>
+</div>
+
+<div class="page-content" style="max-width:860px">
+
+  {prossimi.length > 0 && (
+    <div>
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--blu);margin-bottom:1.25rem">Prossimi appuntamenti</h2>
+      <div class="eventi-list">
+        {prossimi.map(ev => (
+          <div class="evento-card">
+            <div class="evento-date">
+              <div class="ed-day">{fmtDay(ev.data.data)}</div>
+              <div class="ed-mon">{fmtMon(ev.data.data)}</div>
+            </div>
+            <div class="evento-body">
+              <h4>{ev.data.titolo}</h4>
+              <div class="ev-meta">
+                {ev.data.ora && <span>&#128336; {ev.data.ora}</span>}
+                <span>&#128205; {ev.data.luogo}</span>
+              </div>
+              {ev.data.descrizione && <p style="font-size:.82rem;color:var(--testo2);margin-top:.4rem">{ev.data.descrizione}</p>}
+              {ev.data.maps_url && (
+                <a class="evento-maps" href={ev.data.maps_url} target="_blank" rel="noopener">&#128205; Apri in Maps</a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {prossimi.length === 0 && passati.length === 0 && (
+    <div style="text-align:center;padding:4rem;color:var(--testo2)">
+      <p style="font-size:1.1rem">&#128197; Nessun evento programmato.<br/>Controlla presto per i nuovi appuntamenti.</p>
+    </div>
+  )}
+
+  {passati.length > 0 && (
+    <div style="margin-top:3rem">
+      <h2 style="font-size:1.1rem;font-weight:700;color:var(--testo2);margin-bottom:1rem">&#9203; Eventi passati</h2>
+      <div class="eventi-list" style="opacity:.65">
+        {passati.map(ev => (
+          <div class="evento-card">
+            <div class="evento-date" style="background:var(--testo2)">
+              <div class="ed-day">{fmtDay(ev.data.data)}</div>
+              <div class="ed-mon">{fmtMon(ev.data.data)}</div>
+            </div>
+            <div class="evento-body">
+              <h4>{ev.data.titolo}</h4>
+              <div class="ev-meta">
+                {ev.data.ora && <span>&#128336; {ev.data.ora}</span>}
+                <span>&#128205; {ev.data.luogo}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+</div>
+
+<footer style="background:var(--blu-s);color:rgba(255,255,255,.48);text-align:center;padding:2rem 1.5rem;font-size:.82rem">
+  <a href="/" style="color:var(--oro);text-decoration:none">← Torna alla home</a>
+</footer>
+
+</Layout>

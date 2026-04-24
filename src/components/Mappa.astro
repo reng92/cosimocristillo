@@ -1,0 +1,45 @@
+---
+// Punti interesse del programma – coordinate approssimative di Portico di Caserta
+// Aggiorna le coordinate con quelle precise se necessario
+const pins = [
+  { lat: 41.0572, lng: 14.3193, icon: '🏛️', label: 'Piazza Rimembranza', desc: 'Centro del paese – circolo anziani e attività culturali' },
+  { lat: 41.0558, lng: 14.3178, icon: '⚙️', label: 'Municipio', desc: 'Sede comunale – sportelli digitali, Punto Donna, Sportello Disabili' },
+  { lat: 41.0585, lng: 14.3205, icon: '🎭', label: 'Teatro Comunale', desc: 'Completamento e riapertura: centro culturale di Portico' },
+  { lat: 41.0562, lng: 14.3168, icon: '🏫', label: 'Scuola Via Principe di Piemonte', desc: 'Operazione verità – cronoprogramma dei lavori pubblico' },
+  { lat: 41.0548, lng: 14.3215, icon: '🌿', label: 'Piazza Berlinguer', desc: 'Riapertura e restituzione alla comunità' },
+  { lat: 41.0595, lng: 14.3185, icon: '⚽', label: 'Campo Sportivo', desc: 'Riapertura nel più breve tempo possibile' },
+  { lat: 41.0530, lng: 14.3250, icon: '🏭', label: 'Zona Industriale', desc: 'Potenziamento servizi, sicurezza e viabilità' },
+  { lat: 41.0610, lng: 14.3220, icon: '🏗️', label: 'Zona Musicile', desc: 'Scuola primaria, bocciodromo, spazio anziani' },
+];
+---
+
+<div id="mappa-leaflet"></div>
+<div class="mappa-legenda">
+  {pins.map(p => (
+    <span class="mappa-pin-label"><span>{p.icon}</span>{p.label}</span>
+  ))}
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" is:inline></script>
+<script define:vars={{ pins }}>
+document.addEventListener('DOMContentLoaded', () => {
+  const map = L.map('mappa-leaflet').setView([41.057, 14.319], 14);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19,
+  }).addTo(map);
+
+  pins.forEach(p => {
+    const icon = L.divIcon({
+      html: `<div style="font-size:1.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4))">${p.icon}</div>`,
+      className: '',
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+    });
+    L.marker([p.lat, p.lng], { icon })
+      .addTo(map)
+      .bindPopup(`<strong style="color:#0d3580">${p.label}</strong><br><span style="font-size:.82rem">${p.desc}</span>`);
+  });
+});
+</script>

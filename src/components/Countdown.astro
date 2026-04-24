@@ -1,0 +1,36 @@
+---
+// Election day: 24 May 2026 07:00 CEST (UTC+2)
+const TARGET = new Date('2026-05-24T05:00:00Z').getTime();
+---
+<div class="countdown-bar" id="countdown-bar">
+  <span class="cd-label">&#128197; Mancano al voto</span>
+  <div class="cd-units">
+    <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-txt">giorni</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-txt">ore</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-txt">min</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-txt">sec</span></div>
+  </div>
+</div>
+
+<script define:vars={{ TARGET }}>
+function tick() {
+  const now = Date.now();
+  const diff = TARGET - now;
+  if (diff <= 0) {
+    document.getElementById('countdown-bar').innerHTML =
+      '<span class="cd-label" style="font-size:1rem">&#127881; Oggi si vota! 24-25 Maggio 2026</span>';
+    return;
+  }
+  const days  = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins  = Math.floor((diff % 3600000) / 60000);
+  const secs  = Math.floor((diff % 60000) / 1000);
+  const pad = n => String(n).padStart(2, '0');
+  document.getElementById('cd-days').textContent  = days;
+  document.getElementById('cd-hours').textContent = pad(hours);
+  document.getElementById('cd-mins').textContent  = pad(mins);
+  document.getElementById('cd-secs').textContent  = pad(secs);
+}
+tick();
+setInterval(tick, 1000);
+</script>

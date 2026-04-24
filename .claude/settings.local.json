@@ -5,7 +5,9 @@
       "WebSearch",
       "WebFetch(domain:www.comune.porticodicaserta.ce.it)",
       "WebFetch(domain:www.tuttitalia.it)",
-      "Bash(identify \"/c/Users/Ren92/cosimocristillo/content/tutti.png\")"
+      "Bash(identify \"/c/Users/Ren92/cosimocristillo/content/tutti.png\")",
+      "Bash(npm install *)",
+      "Bash(npm run *)"
     ]
   }
 }

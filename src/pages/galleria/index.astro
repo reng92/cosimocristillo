@@ -1,0 +1,61 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+export const prerender = true;
+
+const gallerie = (await getCollection('galleria'))
+  .sort((a, b) => new Date(b.data.data).valueOf() - new Date(a.data.data).valueOf());
+
+function fmtDate(d: Date) {
+  return new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(d));
+}
+---
+<Layout title="Galleria foto – Portico in Comune" description="Album fotografici della campagna di Cosimo Cristillo e Portico in Comune.">
+
+<header>
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">
+      <img class="nav-logo" src="/content/Logo%20Portico%20in%20Comune/LogoPorticoinComune.jpg" alt="Portico in Comune"/>
+      <div class="nav-brand-text"><strong>Cosimo Cristillo</strong><span>Portico in Comune</span></div>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/galleria">Galleria</a>
+      <a href="/#voto" class="nav-cta">Vota</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <h1>&#128247; Galleria foto</h1>
+  <p>Momenti e immagini della campagna di Portico in Comune</p>
+</div>
+
+<div class="page-content" style="max-width:1100px">
+  {gallerie.length === 0
+    ? <div style="text-align:center;padding:4rem;color:var(--testo2)">
+        <p style="font-size:1.1rem">&#128247; Nessun album ancora.<br/>Le foto verranno caricate presto.</p>
+      </div>
+    : <div class="galleria-albums-grid">
+        {gallerie.map(album => (
+          <a class="galleria-album" href={`/galleria/${album.slug}`}>
+            {album.data.copertina
+              ? <img class="galleria-album-cover" src={album.data.copertina} alt={album.data.titolo} loading="lazy"/>
+              : <div class="galleria-album-cover" style="display:flex;align-items:center;justify-content:center;font-size:3rem">&#128247;</div>
+            }
+            <div class="galleria-album-info">
+              <h3 style="font-size:.95rem;font-weight:700;color:var(--blu);margin-bottom:.2rem">{album.data.titolo}</h3>
+              <span style="font-size:.72rem;color:var(--testo2)">{fmtDate(album.data.data)} &middot; {album.data.foto.length} foto</span>
+            </div>
+          </a>
+        ))}
+      </div>
+  }
+</div>
+
+<footer style="background:var(--blu-s);color:rgba(255,255,255,.48);text-align:center;padding:2rem 1.5rem;font-size:.82rem">
+  <a href="/" style="color:var(--oro);text-decoration:none">← Torna alla home</a>
+</footer>
+
+</Layout>

@@ -1,0 +1,54 @@
+---
+const PAGE_URL = 'https://www.facebook.com/porticoincomune';
+const PROFILE_URL = 'https://www.facebook.com/cosimo.cristillo.3';
+---
+
+<section class="sec" id="social">
+  <div class="container">
+    <span class="tag">Seguici</span>
+    <h2 class="stitle">Resta <span>aggiornato</span></h2>
+    <div class="bar"></div>
+    <div class="social-grid">
+      <div class="social-text">
+        <h3>Segui la campagna su Facebook</h3>
+        <p>Aggiornamenti quotidiani sugli eventi, le iniziative e le novità di Portico in Comune. Partecipa alla conversazione e condividi con i tuoi amici.</p>
+        <a class="btn-social" href={PAGE_URL} target="_blank" rel="noopener">
+          &#128462; Portico in Comune
+        </a>
+        &nbsp;
+        <a class="btn-social" style="background:var(--blu-s);margin-top:.75rem" href={PROFILE_URL} target="_blank" rel="noopener">
+          &#128100; Cosimo Cristillo
+        </a>
+      </div>
+      <div class="fb-widget-wrap">
+        <div id="fb-root"></div>
+        <div
+          class="fb-page"
+          data-href={PAGE_URL}
+          data-tabs="timeline"
+          data-width="380"
+          data-height="500"
+          data-small-header="true"
+          data-adapt-container-width="true"
+          data-hide-cover="false"
+          data-show-facepile="true">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Carica l'SDK Facebook solo dopo il consenso ai cookie analitici
+document.addEventListener('DOMContentLoaded', () => {
+  const consent = (() => { try { return JSON.parse(localStorage.getItem('pic_consent_v1')); } catch { return null; } })();
+  // Carichiamo il widget anche senza analytics (è un embed, non un tracker)
+  if (window.FB) { window.FB.XFBML.parse(); return; }
+  const js = document.createElement('script');
+  js.async = true;
+  js.defer = true;
+  js.crossOrigin = 'anonymous';
+  js.src = 'https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v19.0';
+  document.head.appendChild(js);
+});
+</script>
