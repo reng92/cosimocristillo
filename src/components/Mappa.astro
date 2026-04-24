@@ -1,15 +1,12 @@
 ---
-// Punti interesse del programma – coordinate approssimative di Portico di Caserta
-// Aggiorna le coordinate con quelle precise se necessario
 const pins = [
-  { lat: 41.0572, lng: 14.3193, icon: '🏛️', label: 'Piazza Rimembranza', desc: 'Centro del paese – circolo anziani e attività culturali' },
-  { lat: 41.0558, lng: 14.3178, icon: '⚙️', label: 'Municipio', desc: 'Sede comunale – sportelli digitali, Punto Donna, Sportello Disabili' },
-  { lat: 41.0585, lng: 14.3205, icon: '🎭', label: 'Teatro Comunale', desc: 'Completamento e riapertura: centro culturale di Portico' },
-  { lat: 41.0562, lng: 14.3168, icon: '🏫', label: 'Scuola Via Principe di Piemonte', desc: 'Operazione verità – cronoprogramma dei lavori pubblico' },
-  { lat: 41.0548, lng: 14.3215, icon: '🌿', label: 'Piazza Berlinguer', desc: 'Riapertura e restituzione alla comunità' },
-  { lat: 41.0595, lng: 14.3185, icon: '⚽', label: 'Campo Sportivo', desc: 'Riapertura nel più breve tempo possibile' },
-  { lat: 41.0530, lng: 14.3250, icon: '🏭', label: 'Zona Industriale', desc: 'Potenziamento servizi, sicurezza e viabilità' },
-  { lat: 41.0610, lng: 14.3220, icon: '🏗️', label: 'Zona Musicile', desc: 'Scuola primaria, bocciodromo, spazio anziani' },
+  { lat: 41.0528, lng: 14.3043, icon: '🏛️', label: 'Piazza Rimembranza', desc: 'Centro del paese – circolo anziani e attività culturali' },
+  { lat: 41.0523, lng: 14.3037, icon: '⚙️', label: 'Municipio', desc: 'Sede comunale – sportelli digitali, Punto Donna, Sportello Disabili' },
+  { lat: 41.0587, lng: 14.2803, icon: '🏫', label: 'Scuola Via Principe di Piemonte', desc: 'Operazione verità – cronoprogramma dei lavori pubblico' },
+  { lat: 41.0661, lng: 14.3201, icon: '🏭', label: 'Zona Industriale', desc: 'Potenziamento servizi, sicurezza e viabilità' },
+  { lat: 41.0612, lng: 14.2958, icon: '🏗️', label: 'Musicile', desc: 'Scuola primaria, bocciodromo, spazio anziani' },
+  { lat: 41.0604, lng: 14.2793, icon: '🌿', label: 'Piazza Berlinguer', desc: 'Riapertura e restituzione alla comunità' },
+  { lat: 41.0634, lng: 14.3079, icon: '🎭', label: 'Teatro Comunale', desc: 'Completamento e riapertura: centro culturale di Portico' },
 ];
 ---
 
@@ -23,7 +20,7 @@ const pins = [
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" is:inline></script>
 <script define:vars={{ pins }}>
 document.addEventListener('DOMContentLoaded', () => {
-  const map = L.map('mappa-leaflet').setView([41.057, 14.319], 14);
+  const map = L.map('mappa-leaflet').setView([41.059, 14.299], 13);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
