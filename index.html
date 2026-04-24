@@ -52,6 +52,7 @@ h1.hero-nome span{color:var(--oro)}
 .hero-video{width:min(420px,100%);aspect-ratio:9/16;object-fit:cover;border-radius:2rem;border:4px solid var(--oro);box-shadow:0 0 80px rgba(240,192,64,.3),0 24px 64px rgba(0,0,0,.6);display:block}
 @media(max-width:720px){
   .hero{min-height:100svh}
+  .hero-bg{display:none}
   .hero-bg-video{display:block!important;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22;z-index:0;pointer-events:none}
   .hero-inner{grid-template-columns:1fr;padding:5rem 1.5rem 7rem;text-align:center}
   .hero-video-wrap{display:none}
@@ -150,6 +151,53 @@ h2.stitle.on-dark span{color:var(--oro)}
   .cand-card.sindaco .cand-info{padding:1.25rem}
 }
 
+/* ── COOKIE BANNER ── */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--blu-s);color:#fff;padding:1.1rem 1.5rem;box-shadow:0 -4px 32px rgba(0,0,0,.45);transform:translateY(105%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+#cookie-banner.visible{transform:translateY(0)}
+.cb-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center}
+.cb-text h3{font-size:.88rem;font-weight:700;color:var(--oro);margin-bottom:.25rem}
+.cb-text p{font-size:.76rem;color:rgba(255,255,255,.68);line-height:1.5}
+.cb-text a{color:var(--oro);text-decoration:underline}
+.cb-actions{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:flex-end;align-items:center;flex-shrink:0}
+.cb-btn{padding:.5rem 1rem;border-radius:100px;font-size:.76rem;font-weight:700;cursor:pointer;border:none;transition:transform .15s,opacity .15s;letter-spacing:.03em;white-space:nowrap;line-height:1}
+.cb-btn:hover{opacity:.88;transform:translateY(-1px)}
+.cb-btn.accept{background:var(--oro);color:var(--testo)}
+.cb-btn.reject{background:transparent;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.25)}
+.cb-btn.prefs{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+@media(max-width:680px){.cb-inner{grid-template-columns:1fr}.cb-actions{justify-content:stretch}.cb-btn{flex:1;text-align:center}}
+
+/* ── COOKIE MODAL ── */
+#cookie-modal{position:fixed;inset:0;z-index:10000;display:none;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.65);backdrop-filter:blur(4px)}
+#cookie-modal.open{display:flex}
+.cm-panel{background:#0c2156;color:#fff;border-radius:1.5rem 1.5rem 0 0;width:100%;max-width:700px;max-height:88svh;overflow-y:auto;padding:2rem 1.75rem;box-shadow:0 -8px 48px rgba(0,0,0,.55)}
+.cm-panel h2{font-size:1.1rem;font-weight:800;color:var(--oro);margin-bottom:.4rem}
+.cm-panel>.cm-intro{font-size:.8rem;color:rgba(255,255,255,.65);margin-bottom:1.5rem;line-height:1.55}
+.cm-cat{border:1px solid rgba(255,255,255,.1);border-radius:.85rem;margin-bottom:.75rem;overflow:hidden}
+.cm-cat-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 1rem;cursor:pointer;background:rgba(255,255,255,.04);user-select:none}
+.cm-cat-head:hover{background:rgba(255,255,255,.08)}
+.cm-cat-label{flex:1}
+.cm-cat-label strong{font-size:.85rem;font-weight:700;display:block}
+.cm-cat-label small{font-size:.7rem;color:rgba(255,255,255,.5);display:block;margin-top:.1rem}
+.cm-toggle{position:relative;width:40px;height:22px;flex-shrink:0}
+.cm-toggle input{opacity:0;width:0;height:0;position:absolute;pointer-events:none}
+.cm-toggle-track{position:absolute;inset:0;border-radius:100px;background:rgba(255,255,255,.18);cursor:pointer;transition:background .2s}
+.cm-toggle input:checked+.cm-toggle-track{background:var(--oro)}
+.cm-toggle-track::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.cm-toggle input:checked+.cm-toggle-track::after{transform:translateX(18px)}
+.cm-toggle input:disabled+.cm-toggle-track{opacity:.55;cursor:not-allowed}
+.cm-cat-chevron{font-size:.7rem;opacity:.4;transition:transform .2s;flex-shrink:0}
+.cm-cat-head[aria-expanded="true"] .cm-cat-chevron{transform:rotate(180deg)}
+.cm-cat-body{padding:.85rem 1rem 1rem;border-top:1px solid rgba(255,255,255,.08);font-size:.78rem;color:rgba(255,255,255,.62);line-height:1.55;display:none}
+.cm-cat-body p{margin-bottom:.75rem}
+.cm-table{width:100%;border-collapse:collapse;font-size:.7rem;margin-top:.5rem}
+.cm-table th{color:var(--oro);font-weight:600;text-align:left;padding:.3rem .4rem;border-bottom:1px solid rgba(255,255,255,.12);white-space:nowrap}
+.cm-table td{padding:.3rem .4rem;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.72);vertical-align:top}
+.cm-table td:first-child{font-family:monospace;font-size:.68rem;color:rgba(255,255,255,.9)}
+.cm-actions{display:flex;gap:.6rem;margin-top:1.5rem;flex-wrap:wrap}
+.cm-actions .cb-btn{flex:1;text-align:center;padding:.65rem 1rem;font-size:.78rem}
+.cm-footer-links{font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;margin-top:1rem}
+.cm-footer-links a{color:rgba(255,255,255,.45);text-decoration:underline}
+
 /* ── TUTTI BANNER ── */
 .tutti-banner{width:100%;border-radius:1.25rem;display:block;box-shadow:0 8px 32px rgba(0,0,0,.12);margin-bottom:2.5rem}
 
@@ -177,6 +225,14 @@ footer a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
+
+<!-- GA4 Consent Mode default (prima del caricamento GA) -->
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',wait_for_update:500});
+gtag('js',new Date());
+</script>
 
 <!-- HEADER -->
 <header>
@@ -601,7 +657,171 @@ footer a:hover{text-decoration:underline}
     <a href="https://www.facebook.com/cosimo.cristillo.3" target="_blank" rel="noopener">&#128100; Cosimo Cristillo</a>
   </p>
   <p style="margin-top:.5rem;font-size:.75rem">Materiale elettorale ai sensi della normativa vigente.</p>
+  <p style="margin-top:.5rem;font-size:.72rem">
+    <a href="privacy-policy.html">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="cookie-policy.html">Cookie Policy</a> &nbsp;&middot;&nbsp;
+    <a href="javascript:void(0)" onclick="openCookieModal()" style="color:rgba(255,255,255,.4)">Gestisci cookie</a>
+  </p>
 </footer>
+
+<!-- ═══ COOKIE BANNER ═══ -->
+<div id="cookie-banner" role="region" aria-label="Gestione cookie">
+  <div class="cb-inner">
+    <div class="cb-text">
+      <h3>&#127850; Utilizziamo i cookie</h3>
+      <p>Questo sito usa cookie tecnici necessari e, previo consenso, cookie analitici di Google Analytics.
+      <a href="cookie-policy.html" target="_blank">Cookie Policy</a> &middot; <a href="privacy-policy.html" target="_blank">Privacy Policy</a></p>
+    </div>
+    <div class="cb-actions">
+      <button class="cb-btn reject" onclick="cookieChoice('none')">Rifiuta tutto</button>
+      <button class="cb-btn prefs"  onclick="openCookieModal()">Personalizza</button>
+      <button class="cb-btn accept" onclick="cookieChoice('all')">Accetta tutto</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ COOKIE MODAL ═══ -->
+<div id="cookie-modal" role="dialog" aria-modal="true" aria-label="Preferenze cookie">
+  <div class="cm-panel">
+    <h2>Gestisci preferenze cookie</h2>
+    <p class="cm-intro">Scegli quali categorie di cookie consentire. Puoi modificare le tue scelte in qualsiasi momento dal link in fondo alla pagina.</p>
+
+    <!-- Necessari -->
+    <div class="cm-cat">
+      <div class="cm-cat-head" onclick="toggleCatBody(this)" aria-expanded="false">
+        <div class="cm-cat-label">
+          <strong>Cookie necessari</strong>
+          <small>Sempre attivi &mdash; non disattivabili</small>
+        </div>
+        <label class="cm-toggle" onclick="event.stopPropagation()">
+          <input type="checkbox" checked disabled/>
+          <span class="cm-toggle-track"></span>
+        </label>
+        <span class="cm-cat-chevron">&#9660;</span>
+      </div>
+      <div class="cm-cat-body">
+        <p>Indispensabili per il funzionamento del sito. Non raccolgono informazioni utilizzabili per scopi di marketing.</p>
+        <table class="cm-table">
+          <thead><tr><th>Cookie</th><th>Fornitore</th><th>Finalità</th><th>Durata</th><th>Tipo</th></tr></thead>
+          <tbody>
+            <tr><td>pic_consent_v1</td><td>Questo sito</td><td>Salva le preferenze di consenso dell&rsquo;utente</td><td>1 anno</td><td>HTTP</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Analitici -->
+    <div class="cm-cat">
+      <div class="cm-cat-head" onclick="toggleCatBody(this)" aria-expanded="false">
+        <div class="cm-cat-label">
+          <strong>Cookie analitici</strong>
+          <small>Opzionali &mdash; Google Analytics 4</small>
+        </div>
+        <label class="cm-toggle" onclick="event.stopPropagation()">
+          <input type="checkbox" id="tog-analytics"/>
+          <span class="cm-toggle-track"></span>
+        </label>
+        <span class="cm-cat-chevron">&#9660;</span>
+      </div>
+      <div class="cm-cat-body">
+        <p>Raccolgono dati anonimi e aggregati sulle sessioni di navigazione per aiutarci a migliorare il sito. I dati sono trattati da Google LLC e non permettono l&rsquo;identificazione diretta dell&rsquo;utente. Il trasferimento verso gli USA avviene nel rispetto del Data Privacy Framework EU&ndash;US.</p>
+        <table class="cm-table">
+          <thead><tr><th>Cookie</th><th>Fornitore</th><th>Finalità</th><th>Durata</th><th>Tipo</th></tr></thead>
+          <tbody>
+            <tr><td>_ga</td><td>Google</td><td>Identifica utenti unici tramite ID casuale generato dal browser</td><td>2 anni</td><td>HTTP</td></tr>
+            <tr><td>_ga_*</td><td>Google</td><td>Mantiene lo stato della sessione Google Analytics 4</td><td>2 anni</td><td>HTTP</td></tr>
+            <tr><td>_gid</td><td>Google</td><td>Distingue gli utenti nelle ultime 24 ore</td><td>24 ore</td><td>HTTP</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cm-actions">
+      <button class="cb-btn reject" onclick="cookieChoice('none')">Rifiuta tutto</button>
+      <button class="cb-btn prefs"  onclick="saveCustom()">Salva preferenze</button>
+      <button class="cb-btn accept" onclick="cookieChoice('all')">Accetta tutto</button>
+    </div>
+    <p class="cm-footer-links">
+      <a href="cookie-policy.html" target="_blank">Cookie Policy</a> &middot;
+      <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+    </p>
+  </div>
+</div>
+
+<script>
+// ─── Cookie Consent Manager ───────────────────────────────────
+const CKEY = 'pic_consent_v1';
+// ↓ Sostituire con il proprio ID Google Analytics 4
+const GA_ID = 'G-XXXXXXXXXX';
+
+function getConsent(){try{return JSON.parse(localStorage.getItem(CKEY));}catch{return null;}}
+function saveConsentData(obj){localStorage.setItem(CKEY,JSON.stringify({...obj,ts:Date.now(),ver:'1.0'}));}
+
+function loadGA(){
+  if(window._gaLoaded)return;
+  window._gaLoaded=true;
+  const s=document.createElement('script');
+  s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+  s.async=true;
+  document.head.appendChild(s);
+  gtag('config',GA_ID);
+}
+
+function applyConsent(analytics){
+  if(analytics){
+    gtag('consent','update',{analytics_storage:'granted'});
+    loadGA();
+  } else {
+    gtag('consent','update',{analytics_storage:'denied'});
+  }
+}
+
+function cookieChoice(type){
+  const analytics = type==='all';
+  saveConsentData({analytics});
+  applyConsent(analytics);
+  document.getElementById('cookie-banner').classList.remove('visible');
+  document.getElementById('cookie-modal').classList.remove('open');
+}
+
+function saveCustom(){
+  const analytics = document.getElementById('tog-analytics').checked;
+  saveConsentData({analytics});
+  applyConsent(analytics);
+  document.getElementById('cookie-banner').classList.remove('visible');
+  document.getElementById('cookie-modal').classList.remove('open');
+}
+
+function openCookieModal(){
+  const c=getConsent();
+  if(c) document.getElementById('tog-analytics').checked=!!c.analytics;
+  document.getElementById('cookie-modal').classList.add('open');
+}
+
+function toggleCatBody(head){
+  const body=head.nextElementSibling;
+  const open=body.style.display==='block';
+  body.style.display=open?'none':'block';
+  head.setAttribute('aria-expanded',String(!open));
+}
+
+// Chiudi modal cliccando overlay
+document.getElementById('cookie-modal').addEventListener('click',function(e){
+  if(e.target===this) this.classList.remove('open');
+});
+
+// Inizializzazione
+document.addEventListener('DOMContentLoaded',function(){
+  const c=getConsent();
+  if(!c){
+    setTimeout(function(){
+      document.getElementById('cookie-banner').classList.add('visible');
+    },900);
+  } else {
+    applyConsent(c.analytics);
+  }
+});
+</script>
 
 </body>
 </html>
