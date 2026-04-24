@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Cosimo Cristillo Sindaco – Portico in Comune | Elezioni 2026</title>
 <meta name="description" content="Cosimo Cristillo candidato Sindaco di Portico di Caserta con la lista civica Portico in Comune. Programma elettorale completo. Elezioni 24-25 Maggio 2026."/>
-<!-- Facebook SDK – necessario per gli embed (funziona su dominio web, non su file://) -->
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v19.0"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -50,11 +48,12 @@ h1.hero-nome span{color:var(--oro);display:block}
 .hero-meta{display:flex;flex-direction:column;gap:.45rem;font-size:.88rem;opacity:.78}
 .hero-meta span{display:flex;align-items:center;gap:.5rem}
 .hero-photo-wrap{display:flex;justify-content:center}
-.hero-photo{width:min(360px,100%);aspect-ratio:4/5;object-fit:cover;object-position:top center;border-radius:1.75rem;border:4px solid var(--oro);box-shadow:0 0 60px rgba(240,192,64,.2),0 24px 64px rgba(0,0,0,.55)}
+.hero-video-wrap{display:flex;justify-content:center;align-items:center}
+.hero-video{width:min(280px,100%);aspect-ratio:9/16;object-fit:cover;border-radius:2rem;border:4px solid var(--oro);box-shadow:0 0 60px rgba(240,192,64,.25),0 24px 64px rgba(0,0,0,.6);display:block}
 @media(max-width:720px){
   .hero-inner{grid-template-columns:1fr;padding:5rem 1.5rem 7rem;text-align:center}
-  .hero-photo-wrap{order:-1}
-  .hero-photo{width:180px;aspect-ratio:3/4;border-radius:1rem}
+  .hero-video-wrap{order:-1}
+  .hero-video{width:160px;border-radius:1.25rem}
   .hero-top{justify-content:center}
   .hero-slogan{border-left:none;border-top:4px solid var(--oro);padding-left:0;padding-top:.75rem}
   .hero-meta{align-items:center}
@@ -153,25 +152,6 @@ h2.stitle.on-dark span{color:var(--oro)}
 /* ── TUTTI BANNER ── */
 .tutti-banner{width:100%;border-radius:1.25rem;display:block;box-shadow:0 8px 32px rgba(0,0,0,.12);margin-bottom:2.5rem}
 
-/* ── SOCIAL ── */
-#social{background:var(--blu-s);color:#fff;padding:5.5rem 1.5rem}
-#social .stitle{color:#fff}
-#social .stitle span{color:var(--oro)}
-#social .lead{color:rgba(255,255,255,.72)}
-.social-links{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem}
-.social-btn{display:inline-flex;align-items:center;gap:.55rem;padding:.7rem 1.5rem;border-radius:100px;font-size:.88rem;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s;letter-spacing:.03em}
-.social-btn:hover{transform:translateY(-2px)}
-.social-btn.fb{background:#1877f2;color:#fff;box-shadow:0 4px 16px rgba(24,119,242,.4)}
-.social-btn.fb:hover{box-shadow:0 8px 24px rgba(24,119,242,.6)}
-.social-btn.lista{background:var(--oro);color:var(--testo);box-shadow:0 4px 16px rgba(240,192,64,.35)}
-.social-btn.lista:hover{box-shadow:0 8px 24px rgba(240,192,64,.55)}
-.fb-embeds{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem}
-.fb-embed-col{display:flex;flex-direction:column;gap:.75rem}
-.fb-embed-col h3{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--oro);margin-bottom:.25rem}
-.fb-frame{background:rgba(255,255,255,.05);border-radius:1rem;padding:1.5rem;min-height:500px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.75rem;border:1px solid rgba(255,255,255,.1)}
-.fb-frame-note{font-size:.8rem;color:rgba(255,255,255,.45);text-align:center;line-height:1.5}
-.fb-frame .fb-page,.fb-frame .fb-video{margin:0 auto}
-@media(max-width:800px){.fb-embeds{grid-template-columns:1fr}}
 
 /* ── VOTO ── */
 #voto{background:linear-gradient(135deg,var(--blu-m) 0%,var(--blu) 100%);color:#fff;text-align:center;padding:7rem 1.5rem}
@@ -197,8 +177,6 @@ footer a:hover{text-decoration:underline}
 </head>
 <body>
 
-<div id="fb-root"></div>
-
 <!-- HEADER -->
 <header>
   <div class="nav-inner">
@@ -214,7 +192,6 @@ footer a:hover{text-decoration:underline}
       <a href="#comune">Programma</a>
       <a href="#giorni">100 Giorni</a>
       <a href="#candidati">La Squadra</a>
-      <a href="#social">Social</a>
       <a href="#voto" class="nav-cta">Vota</a>
     </nav>
   </div>
@@ -237,8 +214,10 @@ footer a:hover{text-decoration:underline}
         <span>&#127963; Elezioni Comunali di Portico di Caserta</span>
       </div>
     </div>
-    <div class="hero-photo-wrap">
-      <img class="hero-photo" src="content/Foto%20Cosimo%20Cristillo%20Sindaco/CosimoCristillo.jpg" alt="Cosimo Cristillo candidato sindaco Portico di Caserta"/>
+    <div class="hero-video-wrap">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="content/video.mp4" type="video/mp4"/>
+      </video>
     </div>
   </div>
   <div class="hero-wave">
@@ -253,7 +232,7 @@ footer a:hover{text-decoration:underline}
   <div class="container">
     <div class="prog-grid">
       <div>
-        <img src="content/Foto%20Cosimo%20Cristillo%20Sindaco/CosimoCristillo1.jpg" alt="Cosimo Cristillo" style="width:100%;border-radius:1.25rem;box-shadow:0 12px 48px rgba(26,86,196,.14);display:block"/>
+        <img src="content/Foto%20Cosimo%20Cristillo%20Sindaco/CosimoCristillo.jpg" alt="Cosimo Cristillo" style="width:100%;border-radius:1.25rem;box-shadow:0 12px 48px rgba(26,86,196,.14);display:block"/>
       </div>
       <div class="prog-body">
         <span class="tag">Il nostro impegno</span>
@@ -578,54 +557,6 @@ footer a:hover{text-decoration:underline}
         <div class="cand-info"><div class="fn">Maria</div><div class="ln">Piccirillo</div><div class="num">n&deg; 12</div></div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- SOCIAL -->
-<section id="social">
-  <div class="container" style="text-align:center">
-    <span class="tag light" style="justify-content:center;display:inline-flex">&#128172; Seguici sui Social</span>
-    <h2 class="stitle" style="text-align:center">Restaci <span>vicino</span></h2>
-    <div class="bar center"></div>
-    <p class="lead" style="margin:0 auto 2rem">Seguici sulle pagine Facebook per aggiornamenti quotidiani, eventi e contenuti della campagna elettorale.</p>
-    <div class="social-links">
-      <a class="social-btn lista" href="https://www.facebook.com/porticoincomune" target="_blank" rel="noopener">
-        &#128140; Portico in Comune – Pagina ufficiale
-      </a>
-      <a class="social-btn fb" href="https://www.facebook.com/cosimo.cristillo.3" target="_blank" rel="noopener">
-        &#128100; Cosimo Cristillo – Profilo candidato
-      </a>
-    </div>
-    <div class="fb-embeds">
-      <div class="fb-embed-col">
-        <h3>&#128462; Pagina Portico in Comune</h3>
-        <div class="fb-frame">
-          <div class="fb-page"
-            data-href="https://www.facebook.com/porticoincomune"
-            data-tabs="timeline"
-            data-width="450"
-            data-height="500"
-            data-small-header="true"
-            data-adapt-container-width="true"
-            data-hide-cover="false"
-            data-show-facepile="false">
-          </div>
-        </div>
-      </div>
-      <div class="fb-embed-col">
-        <h3>&#127909; Reel in evidenza</h3>
-        <div class="fb-frame" style="padding:0;overflow:hidden;background:#000">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1DqigJYmwo%2F&show_text=false&width=450&height=580&appId"
-            width="450" height="580"
-            style="border:none;overflow:hidden;display:block;width:100%;max-width:100%"
-            scrolling="no" frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            allowfullscreen="true">
-          </iframe>
-        </div>
-      </div>
     </div>
   </div>
 </section>
