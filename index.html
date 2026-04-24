@@ -211,6 +211,13 @@ h2.stitle.on-dark span{color:var(--oro)}
 .vday .gg{font-size:3.5rem;font-weight:900;color:var(--oro);line-height:1}
 .vday .mm{font-size:.95rem;font-weight:600;opacity:.85;text-transform:uppercase;letter-spacing:.1em}
 .vday .dd{font-size:.75rem;opacity:.5;margin-top:.2rem;letter-spacing:.05em}
+.vday .ore{font-size:.8rem;font-weight:600;color:var(--oro);margin-top:.6rem;opacity:1;letter-spacing:.03em}
+.seggi-title{font-size:1.1rem;font-weight:700;color:#fff;margin:2.5rem 0 1.25rem;opacity:.9}
+.seggi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.85rem;max-width:820px;margin:0 auto 2.5rem;text-align:left}
+.seggio-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:.85rem;padding:1rem 1.2rem}
+.seggio-card .sn{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--oro);margin-bottom:.3rem}
+.seggio-card .sname{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:.2rem}
+.seggio-card .saddr{font-size:.77rem;opacity:.65;color:#fff;line-height:1.4}
 .btn-fb{display:inline-flex;align-items:center;gap:.5rem;background:var(--oro);color:var(--testo);font-size:.88rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.85rem 2.1rem;border-radius:100px;text-decoration:none;transition:transform .2s,box-shadow .2s}
 .btn-fb:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(240,192,64,.5)}
 
@@ -629,9 +636,20 @@ gtag('js',new Date());
     <div class="bar center"></div>
     <p>Segna <strong>Portico in Comune</strong> sulla scheda e scrivi <strong>Cosimo Cristillo</strong> come preferenza di voto.</p>
     <div class="voto-days">
-      <div class="vday"><div class="gg">24</div><div class="mm">Maggio 2026</div><div class="dd">Domenica</div></div>
-      <div class="vday"><div class="gg">25</div><div class="mm">Maggio 2026</div><div class="dd">Luned&igrave;</div></div>
+      <div class="vday"><div class="gg">24</div><div class="mm">Maggio 2026</div><div class="dd">Domenica</div><div class="ore">&#128336; 07:00 – 23:00</div></div>
+      <div class="vday"><div class="gg">25</div><div class="mm">Maggio 2026</div><div class="dd">Luned&igrave;</div><div class="ore">&#128336; 07:00 – 15:00</div></div>
     </div>
+
+    <p class="seggi-title">&#127978; Dove si vota – Sezioni elettorali</p>
+    <div class="seggi-grid">
+      <div class="seggio-card"><div class="sn">Sezione 1</div><div class="sname">Scuola Primaria &ldquo;Don Bosco&rdquo;</div><div class="saddr">Via Don Bosco, Portico di Caserta</div></div>
+      <div class="seggio-card"><div class="sn">Sezione 2</div><div class="sname">Scuola Secondaria &ldquo;De Filippo&rdquo;</div><div class="saddr">Via Trento, Portico di Caserta</div></div>
+      <div class="seggio-card"><div class="sn">Sezione 3</div><div class="sname">Municipio – Sala Consiliare</div><div class="saddr">Piazza Municipio, Portico di Caserta</div></div>
+      <div class="seggio-card"><div class="sn">Sezione 4</div><div class="sname">Scuola dell&rsquo;Infanzia &ldquo;Musicile&rdquo;</div><div class="saddr">Via Musicile, Portico di Caserta</div></div>
+      <div class="seggio-card"><div class="sn">Sezione 5</div><div class="sname">Centro Sociale &ldquo;Parco dei Pini&rdquo;</div><div class="saddr">Via dei Pini, Portico di Caserta</div></div>
+    </div>
+    <p style="font-size:.75rem;opacity:.45;margin-bottom:2rem">Le sezioni indicate sono da confermare con i dati ufficiali del Comune. Verifica la tua sezione sulla tessera elettorale.</p>
+
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
       <a class="btn-fb" href="https://www.facebook.com/porticoincomune" target="_blank" rel="noopener">
         &#128462; Portico in Comune
