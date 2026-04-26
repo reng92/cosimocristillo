@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
 import { getCollection } from 'astro:content';
 export const prerender = true;
 
@@ -12,20 +13,7 @@ function fmtDate(d: Date) {
 ---
 <Layout title="Galleria foto – Portico in Comune" description="Album fotografici della campagna di Cosimo Cristillo e Portico in Comune.">
 
-<header>
-  <div class="nav-inner">
-    <a class="nav-brand" href="/">
-      <img class="nav-logo" src="/content/Logo%20Portico%20in%20Comune/LogoPorticoinComune.jpg" alt="Portico in Comune"/>
-      <div class="nav-brand-text"><strong>Cosimo Cristillo</strong><span>Portico in Comune</span></div>
-    </a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog">Blog</a>
-      <a href="/galleria">Galleria</a>
-      <a href="/#voto" class="nav-cta">Vota</a>
-    </nav>
-  </div>
-</header>
+<Header />
 
 <div class="page-hero">
   <h1>&#128247; Galleria foto</h1>

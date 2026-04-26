@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Countdown from '../components/Countdown.astro';
-import FacebookEmbed from '../components/FacebookEmbed.astro';
 import { getCollection } from 'astro:content';
 
 export const prerender = true;
@@ -440,9 +439,6 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
   </div>
 </section>
 )}
-
-<!-- SOCIAL FACEBOOK -->
-<FacebookEmbed />
 
 <!-- VOTO -->
 <section id="voto">

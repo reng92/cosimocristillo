@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
 import { getCollection } from 'astro:content';
 export const prerender = true;
 
@@ -18,20 +19,7 @@ function fmtMon(d: Date) { return new Intl.DateTimeFormat('it-IT', { month: 'sho
 ---
 <Layout title="Calendario eventi – Portico in Comune" description="Tutti gli eventi della campagna di Cosimo Cristillo e Portico in Comune.">
 
-<header>
-  <div class="nav-inner">
-    <a class="nav-brand" href="/">
-      <img class="nav-logo" src="/content/Logo%20Portico%20in%20Comune/LogoPorticoinComune.jpg" alt="Portico in Comune"/>
-      <div class="nav-brand-text"><strong>Cosimo Cristillo</strong><span>Portico in Comune</span></div>
-    </a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog">Blog</a>
-      <a href="/eventi">Eventi</a>
-      <a href="/#voto" class="nav-cta">Vota</a>
-    </nav>
-  </div>
-</header>
+<Header />
 
 <div class="page-hero">
   <h1>&#128197; Calendario eventi</h1>
@@ -59,6 +47,11 @@ function fmtMon(d: Date) { return new Intl.DateTimeFormat('it-IT', { month: 'sho
               {ev.data.descrizione && <p style="font-size:.82rem;color:var(--testo2);margin-top:.4rem">{ev.data.descrizione}</p>}
               {ev.data.maps_url && (
                 <a class="evento-maps" href={ev.data.maps_url} target="_blank" rel="noopener">&#128205; Apri in Maps</a>
+              )}
+              {ev.data.locandina && (
+                <a class="glightbox" href={ev.data.locandina} data-title={ev.data.titolo} style="display:inline-block;margin-top:.6rem">
+                  <img src={ev.data.locandina} alt={`Locandina ${ev.data.titolo}`} style="height:80px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.18);cursor:zoom-in" loading="lazy"/>
+                </a>
               )}
             </div>
           </div>

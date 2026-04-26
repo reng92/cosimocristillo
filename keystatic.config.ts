@@ -57,6 +57,11 @@ export default config({
         luogo: fields.text({ label: 'Luogo', validation: { isRequired: true } }),
         descrizione: fields.text({ label: 'Descrizione', multiline: true }),
         maps_url: fields.url({ label: 'Link Google Maps (opzionale)' }),
+        locandina: fields.image({
+          label: 'Locandina evento',
+          directory: 'public/content/eventi',
+          publicPath: '/content/eventi/',
+        }),
       },
     }),
 

@@ -1,0 +1,50 @@
+---
+interface NavLink {
+  href: string;
+  label: string;
+  cta?: boolean;
+}
+
+interface Props {
+  links?: NavLink[];
+}
+
+const { links = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/eventi', label: 'Eventi' },
+  { href: '/galleria', label: 'Galleria' },
+  { href: '/#voto', label: 'Vota', cta: true },
+] } = Astro.props;
+---
+
+<header>
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">
+      <img class="nav-logo" src="/content/Logo%20Portico%20in%20Comune/LogoPorticoinComune.jpg" alt="Portico in Comune"/>
+      <div class="nav-brand-text">
+        <strong>Cosimo Cristillo</strong>
+        <span>Portico in Comune</span>
+      </div>
+    </a>
+    <nav id="main-nav">
+      {links.map(l => (
+        <a href={l.href} class={l.cta ? 'nav-cta' : ''}>{l.label}</a>
+      ))}
+    </nav>
+    <button class="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.hamburger');
+  const nav = document.getElementById('main-nav');
+  btn?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(!!open));
+  });
+</script>

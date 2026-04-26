@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
 import { getCollection, getEntry } from 'astro:content';
 export const prerender = true;
 
@@ -24,20 +25,7 @@ function fmtDate(d: Date) {
   ogImage={post.data.immagine}
 >
 
-<header>
-  <div class="nav-inner">
-    <a class="nav-brand" href="/">
-      <img class="nav-logo" src="/content/Logo%20Portico%20in%20Comune/LogoPorticoinComune.jpg" alt="Portico in Comune"/>
-      <div class="nav-brand-text"><strong>Cosimo Cristillo</strong><span>Portico in Comune</span></div>
-    </a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog">Blog</a>
-      <a href="/eventi">Eventi</a>
-      <a href="/#voto" class="nav-cta">Vota</a>
-    </nav>
-  </div>
-</header>
+<Header />
 
 {post.data.immagine && (
   <div style="width:100%;max-height:420px;overflow:hidden">
