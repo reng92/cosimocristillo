@@ -10,7 +10,7 @@ const { titolo, dataStr, luogo } = Astro.props;
 <div class="announce-bar" id="announce-bar" role="region" aria-label="Prossimo evento">
   <span class="ab-icon">&#128197;</span>
   <span class="ab-text">
-    <strong>{titolo}</strong><span class="ab-sep"> · </span><span class="ab-sub">{dataStr}<span class="ab-sep-inner"> · </span>{luogo}</span>
+    <strong>{titolo}</strong><span class="ab-sep" aria-hidden="true"> · </span><span class="ab-sub">{dataStr}<span class="ab-sep-inner" aria-hidden="true"> · </span>{luogo}</span>
   </span>
   <a href="/eventi" class="ab-link">Tutti gli eventi →</a>
   <button class="ab-close" id="ab-close" aria-label="Chiudi avviso">&#10005;</button>

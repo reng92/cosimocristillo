@@ -457,7 +457,7 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
           <p style="font-size:.9rem;color:var(--testo2);line-height:1.6;margin-bottom:.75rem">{prossimoEvento.data.descrizione}</p>
         )}
         {prossimoEvento.data.maps_url && (
-          <a class="evento-maps" href={prossimoEvento.data.maps_url} target="_blank" rel="noopener">&#128205; Apri in Maps</a>
+          <a class="evento-maps" href={prossimoEvento.data.maps_url} target="_blank" rel="noopener" aria-label={`Apri in Maps – ${prossimoEvento.data.luogo}`}>&#128205; Apri in Maps</a>
         )}
         {prossimoEvento.data.locandina && (
           <img src={prossimoEvento.data.locandina} alt="Locandina" style="width:100%;border-radius:10px;margin-top:1rem;display:block;box-shadow:0 4px 20px rgba(0,0,0,.15)" loading="lazy"/>
@@ -494,7 +494,7 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
           <div class="sn">&#127981; Plesso Via Collodi</div>
           <div class="sname">Scuola dell&rsquo;Infanzia</div>
           <div class="saddr">Via Collodi, 14 &mdash; 81050 Portico di Caserta (CE)</div>
-          <a class="btn-maps" href="https://www.google.com/maps/search/?api=1&query=Via+Collodi+14+Portico+di+Caserta+CE" target="_blank" rel="noopener">&#128205; Apri in Maps</a>
+          <a class="btn-maps" href="https://www.google.com/maps/search/?api=1&query=Via+Collodi+14+Portico+di+Caserta+CE" target="_blank" rel="noopener" aria-label="Apri in Maps – Scuola dell'Infanzia Via Collodi">&#128205; Apri in Maps</a>
         </div>
       </div>
       <div class="seggio-card">
@@ -503,7 +503,7 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
           <div class="sn">&#127981; Plesso Musicile</div>
           <div class="sname">Scuola Primaria</div>
           <div class="saddr">Via G. Rossini, 6 &mdash; 81050 Portico di Caserta (CE)</div>
-          <a class="btn-maps" href="https://www.google.com/maps/search/?api=1&query=Via+G.+Rossini+6+Portico+di+Caserta+CE" target="_blank" rel="noopener">&#128205; Apri in Maps</a>
+          <a class="btn-maps" href="https://www.google.com/maps/search/?api=1&query=Via+G.+Rossini+6+Portico+di+Caserta+CE" target="_blank" rel="noopener" aria-label="Apri in Maps – Scuola Primaria Musicile">&#128205; Apri in Maps</a>
         </div>
       </div>
     </div>

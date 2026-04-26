@@ -49,7 +49,7 @@ function fmtMon(d: Date) { return new Intl.DateTimeFormat('it-IT', { month: 'sho
               </div>
               {ev.data.descrizione && <p style="font-size:.82rem;color:var(--testo2);margin-top:.4rem">{ev.data.descrizione}</p>}
               {ev.data.maps_url && (
-                <a class="evento-maps" href={ev.data.maps_url} target="_blank" rel="noopener">&#128205; Apri in Maps</a>
+                <a class="evento-maps" href={ev.data.maps_url} target="_blank" rel="noopener" aria-label={`Apri in Maps – ${ev.data.luogo}`}>&#128205; Apri in Maps</a>
               )}
               {ev.data.locandina && (
                 <img src={ev.data.locandina} alt={`Locandina ${ev.data.titolo}`} style="width:100%;max-width:460px;border-radius:10px;margin-top:.85rem;display:block;box-shadow:0 4px 16px rgba(0,0,0,.14)" loading="lazy"/>
