@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
-Disallow: /privacy-policy.html
-Disallow: /cookie-policy.html
+Disallow: /keystatic
 
-Sitemap: https://cosimocristillo.it/sitemap.xml
+User-agent: facebookexternalbot
+Allow: /
+
+User-agent: facebookcatalog
+Allow: /
