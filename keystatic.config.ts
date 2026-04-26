@@ -4,11 +4,10 @@ const isProd = process.env.NODE_ENV === 'production';
 
 export default config({
   storage: isProd
-    ? {
-        kind: 'github',
-        repo: { owner: 'reng92', name: 'cosimocristillo' }, // aggiorna se il repo ha un nome diverso
-      }
+    ? { kind: 'cloud' }
     : { kind: 'local' },
+
+  cloud: { project: 'tracceweb/cosimocristillo' },
 
   ui: {
     brand: { name: 'Portico in Comune – Admin' },
