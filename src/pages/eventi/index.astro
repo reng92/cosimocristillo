@@ -5,12 +5,13 @@ import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 export const prerender = true;
 
-const ora = new Date();
+const oggi = new Date();
+oggi.setHours(0, 0, 0, 0);
 const tutti = (await getCollection('eventi'))
   .sort((a, b) => new Date(a.data.data).valueOf() - new Date(b.data.data).valueOf());
 
-const prossimi = tutti.filter(e => new Date(e.data.data) >= ora);
-const passati  = tutti.filter(e => new Date(e.data.data) < ora).reverse();
+const prossimi = tutti.filter(e => new Date(e.data.data) >= oggi);
+const passati  = tutti.filter(e => new Date(e.data.data) < oggi).reverse();
 
 function fmtDate(d: Date) {
   return new Intl.DateTimeFormat('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(d));
@@ -22,12 +23,7 @@ function fmtMon(d: Date) { return new Intl.DateTimeFormat('it-IT', { month: 'sho
 
 <Header />
 
-<div class="page-hero">
-  <h1>&#128197; Calendario eventi</h1>
-  <p>Comizi, incontri e iniziative della campagna</p>
-</div>
-
-<div class="page-content" style="max-width:860px">
+<div class="page-content" style="max-width:860px;padding-top:2rem">
 
   {prossimi.length > 0 && (
     <div>

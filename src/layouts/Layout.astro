@@ -231,6 +231,13 @@ h2.stitle.on-dark span{color:var(--oro)}
 .evento-maps{display:inline-flex;align-items:center;gap:.3rem;font-size:.7rem;font-weight:700;color:var(--blu);text-decoration:none;margin-top:.4rem;letter-spacing:.04em}
 .evento-maps:hover{color:var(--oro)}
 @media(max-width:480px){.evento-card{grid-template-columns:1fr}.evento-date{display:flex;gap:.75rem;align-items:center;border-radius:.5rem}}
+/* ── EVENTO SPOTLIGHT (home) ── */
+.evento-spotlight{display:grid;grid-template-columns:100px 1fr;gap:1.5rem;align-items:start;background:#fff;border-radius:1.25rem;padding:1.75rem;box-shadow:0 4px 24px rgba(26,86,196,.1);border-left:5px solid var(--blu)}
+.es-date{background:var(--blu-m);color:#fff;border-radius:.85rem;padding:1rem .6rem;text-align:center}
+.es-day{font-size:2.5rem;font-weight:900;line-height:1;color:var(--oro)}
+.es-mon{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.85;margin-top:.2rem}
+.es-title{font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:800;color:var(--blu);line-height:1.3;margin-bottom:.25rem}
+@media(max-width:540px){.evento-spotlight{grid-template-columns:1fr}.es-date{display:flex;gap:.75rem;align-items:center;border-radius:.6rem;padding:.75rem 1rem}.es-day{font-size:2rem}}
 
 /* ── GALLERIA ── */
 #galleria-sec{background:var(--bianco)}

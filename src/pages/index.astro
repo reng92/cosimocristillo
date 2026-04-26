@@ -11,11 +11,11 @@ const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.data.valueOf() - a.data.data.valueOf())
   .slice(0, 3);
 
-const ora = new Date();
-const eventiProssimi = (await getCollection('eventi'))
-  .filter(e => new Date(e.data.data) >= ora)
-  .sort((a, b) => new Date(a.data.data).valueOf() - new Date(b.data.data).valueOf())
-  .slice(0, 5);
+const oggi = new Date();
+oggi.setHours(0, 0, 0, 0);
+const prossimoEvento = (await getCollection('eventi'))
+  .filter(e => new Date(e.data.data) >= oggi)
+  .sort((a, b) => new Date(a.data.data).valueOf() - new Date(b.data.data).valueOf())[0] ?? null;
 
 const gallerie = (await getCollection('galleria'))
   .sort((a, b) => new Date(b.data.data).valueOf() - new Date(a.data.data).valueOf())
@@ -422,6 +422,47 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
 </section>
 )}
 
+<!-- PROSSIMO EVENTO -->
+{prossimoEvento && (
+<section class="sec" id="prossimo-evento" style="background:var(--grigio)">
+  <div class="container" style="max-width:780px">
+    <span class="tag">&#128197; Prossimo appuntamento</span>
+    <div class="bar" style="margin-bottom:1.5rem"></div>
+    <div class="evento-spotlight">
+      <div class="es-date">
+        <div class="es-day">{fmtDay(prossimoEvento.data.data)}</div>
+        <div class="es-mon">{fmtMon(prossimoEvento.data.data)}</div>
+      </div>
+      <div class="es-body">
+        <h2 class="es-title">{prossimoEvento.data.titolo}</h2>
+        <div class="ev-meta" style="margin:.5rem 0 .75rem">
+          {prossimoEvento.data.ora && <span>&#128336; {prossimoEvento.data.ora}</span>}
+          <span>&#128205; {prossimoEvento.data.luogo}</span>
+        </div>
+        {prossimoEvento.data.descrizione && (
+          <p style="font-size:.9rem;color:var(--testo2);line-height:1.6;margin-bottom:.75rem">{prossimoEvento.data.descrizione}</p>
+        )}
+        <div style="display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap">
+          {prossimoEvento.data.maps_url && (
+            <a class="evento-maps" href={prossimoEvento.data.maps_url} target="_blank" rel="noopener">&#128205; Apri in Maps</a>
+          )}
+          {prossimoEvento.data.locandina && (
+            <a class="glightbox" href={prossimoEvento.data.locandina} data-title={prossimoEvento.data.titolo}>
+              <img src={prossimoEvento.data.locandina} alt="Locandina" style="height:90px;border-radius:6px;box-shadow:0 2px 10px rgba(0,0,0,.18);cursor:zoom-in" loading="lazy"/>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:1.75rem;text-align:center">
+      <a href="/eventi" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--blu);color:#fff;font-size:.85rem;font-weight:700;padding:.7rem 1.75rem;border-radius:100px;text-decoration:none">
+        Tutti gli eventi →
+      </a>
+    </div>
+  </div>
+</section>
+)}
+
 <!-- VOTO -->
 <section id="voto">
   <div class="container">
@@ -434,37 +475,6 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
       <div class="vday"><div class="gg">25</div><div class="mm">Maggio 2026</div><div class="dd">Luned&igrave;</div><div class="ore">&#128336; 07:00 – 15:00</div></div>
     </div>
 
-    <!-- EVENTI PROSSIMI -->
-    {eventiProssimi.length > 0 && (
-    <div style="max-width:700px;margin:0 auto 3rem">
-      <p class="seggi-title" style="margin-top:0">&#128197; Prossimi appuntamenti</p>
-      <div class="eventi-list" style="text-align:left">
-        {eventiProssimi.map(ev => (
-          <div class="evento-card" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15)">
-            <div class="evento-date">
-              <div class="ed-day">{fmtDay(ev.data.data)}</div>
-              <div class="ed-mon">{fmtMon(ev.data.data)}</div>
-            </div>
-            <div class="evento-body">
-              <h4 style="color:#fff">{ev.data.titolo}</h4>
-              <div class="ev-meta">
-                {ev.data.ora && <span style="color:rgba(255,255,255,.7)">&#128336; {ev.data.ora}</span>}
-                <span style="color:rgba(255,255,255,.7)">&#128205; {ev.data.luogo}</span>
-              </div>
-              {ev.data.maps_url && (
-                <a class="evento-maps" href={ev.data.maps_url} target="_blank" rel="noopener" style="color:var(--oro)">
-                  &#128205; Apri in Maps
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style="text-align:center;margin-top:1.5rem">
-        <a href="/eventi" style="color:var(--oro);font-size:.82rem;font-weight:700;text-decoration:none">Tutti gli eventi →</a>
-      </div>
-    </div>
-    )}
 
     <p class="seggi-title">&#127978; Dove si vota – Sezioni elettorali</p>
     <div class="seggi-grid">
