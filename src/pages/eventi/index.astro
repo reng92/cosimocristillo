@@ -46,9 +46,7 @@ function fmtMon(d: Date) { return new Intl.DateTimeFormat('it-IT', { month: 'sho
                 <a class="evento-maps" href={ev.data.maps_url} target="_blank" rel="noopener">&#128205; Apri in Maps</a>
               )}
               {ev.data.locandina && (
-                <a class="glightbox" href={ev.data.locandina} data-title={ev.data.titolo} style="display:inline-block;margin-top:.6rem">
-                  <img src={ev.data.locandina} alt={`Locandina ${ev.data.titolo}`} style="height:80px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.18);cursor:zoom-in" loading="lazy"/>
-                </a>
+                <img src={ev.data.locandina} alt={`Locandina ${ev.data.titolo}`} style="width:100%;max-width:460px;border-radius:10px;margin-top:.85rem;display:block;box-shadow:0 4px 16px rgba(0,0,0,.14)" loading="lazy"/>
               )}
             </div>
           </div>

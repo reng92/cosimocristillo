@@ -451,16 +451,12 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
         {prossimoEvento.data.descrizione && (
           <p style="font-size:.9rem;color:var(--testo2);line-height:1.6;margin-bottom:.75rem">{prossimoEvento.data.descrizione}</p>
         )}
-        <div style="display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap">
-          {prossimoEvento.data.maps_url && (
-            <a class="evento-maps" href={prossimoEvento.data.maps_url} target="_blank" rel="noopener">&#128205; Apri in Maps</a>
-          )}
-          {prossimoEvento.data.locandina && (
-            <a class="glightbox" href={prossimoEvento.data.locandina} data-title={prossimoEvento.data.titolo}>
-              <img src={prossimoEvento.data.locandina} alt="Locandina" style="height:90px;border-radius:6px;box-shadow:0 2px 10px rgba(0,0,0,.18);cursor:zoom-in" loading="lazy"/>
-            </a>
-          )}
-        </div>
+        {prossimoEvento.data.maps_url && (
+          <a class="evento-maps" href={prossimoEvento.data.maps_url} target="_blank" rel="noopener">&#128205; Apri in Maps</a>
+        )}
+        {prossimoEvento.data.locandina && (
+          <img src={prossimoEvento.data.locandina} alt="Locandina" style="width:100%;border-radius:10px;margin-top:1rem;display:block;box-shadow:0 4px 20px rgba(0,0,0,.15)" loading="lazy"/>
+        )}
       </div>
     </div>
     <div style="margin-top:1.75rem;text-align:center">
