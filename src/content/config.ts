@@ -7,6 +7,7 @@ const blog = defineCollection({
     data: z.coerce.date(),
     anteprima: z.string().optional(),
     immagine: z.string().optional(),
+    fotografie: z.array(z.string()).optional(),
   }),
 });
 
@@ -19,6 +20,7 @@ const eventi = defineCollection({
     luogo: z.string(),
     descrizione: z.string().optional(),
     maps_url: z.string().url().optional(),
+    locandina: z.string().optional(),
   }),
 });
 
@@ -32,4 +34,16 @@ const galleria = defineCollection({
   }),
 });
 
-export const collections = { blog, eventi, galleria };
+const rassegna_stampa = defineCollection({
+  type: 'data',
+  schema: z.object({
+    titolo: z.string(),
+    testata: z.string(),
+    data: z.coerce.date(),
+    url: z.string().url(),
+    immagine: z.string().optional(),
+    anteprima: z.string().optional(),
+  }),
+});
+
+export const collections = { blog, eventi, galleria, rassegna_stampa };

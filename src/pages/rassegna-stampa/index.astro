@@ -1,0 +1,146 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { getCollection } from 'astro:content';
+export const prerender = true;
+
+const articoli = (await getCollection('rassegna_stampa'))
+  .sort((a, b) => new Date(b.data.data).valueOf() - new Date(a.data.data).valueOf());
+
+function fmtDate(d: Date) {
+  return new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(d));
+}
+---
+<Layout
+  title="Rassegna stampa – Portico in Comune"
+  description="Gli articoli delle testate giornalistiche su Cosimo Cristillo e Portico in Comune."
+>
+
+<Header />
+
+<div class="page-hero">
+  <h1>&#128240; Rassegna stampa</h1>
+  <p>Come i giornali raccontano Portico in Comune</p>
+</div>
+
+<div class="page-content" style="max-width:1100px">
+  {articoli.length === 0
+    ? <div style="text-align:center;padding:4rem;color:var(--testo2)">
+        <p style="font-size:1.1rem">&#128240; Nessun articolo ancora.<br/>I contenuti verranno pubblicati qui.</p>
+      </div>
+    : <div class="stampa-grid">
+        {articoli.map(art => (
+          <a class="stampa-card" href={art.data.url} target="_blank" rel="noopener noreferrer">
+            {art.data.immagine
+              ? <img class="stampa-card-img" src={art.data.immagine} alt={art.data.titolo} loading="lazy"/>
+              : <div class="stampa-card-img-placeholder">&#128240;</div>
+            }
+            <div class="stampa-card-body">
+              <span class="stampa-testata">{art.data.testata}</span>
+              <h2 class="stampa-card-title">{art.data.titolo}</h2>
+              {art.data.anteprima && <p class="stampa-card-excerpt">{art.data.anteprima}</p>}
+              <div class="stampa-card-footer">
+                <span class="stampa-card-date">{fmtDate(art.data.data)}</span>
+                <span class="stampa-card-link">Leggi l'articolo →</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+  }
+</div>
+
+<footer style="background:var(--blu-s);color:rgba(255,255,255,.48);text-align:center;padding:2rem 1.5rem;font-size:.82rem">
+  <a href="/" style="color:var(--oro);text-decoration:none">← Torna alla home</a>
+</footer>
+
+</Layout>
+
+<style>
+.stampa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.stampa-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.08);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.stampa-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,.13);
+}
+.stampa-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.stampa-card-img-placeholder {
+  width: 100%;
+  height: 200px;
+  background: var(--grigio2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+.stampa-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: .4rem;
+}
+.stampa-testata {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--blu);
+  background: var(--grigio);
+  padding: .2rem .55rem;
+  border-radius: 100px;
+  align-self: flex-start;
+}
+.stampa-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--testo);
+  line-height: 1.35;
+  margin-top: .2rem;
+}
+.stampa-card-excerpt {
+  font-size: .82rem;
+  color: var(--testo2);
+  line-height: 1.5;
+  flex: 1;
+}
+.stampa-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: .75rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--grigio2);
+}
+.stampa-card-date {
+  font-size: .75rem;
+  color: var(--testo2);
+}
+.stampa-card-link {
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--blu);
+}
+@media(max-width:600px) {
+  .stampa-grid { grid-template-columns: 1fr; }
+}
+</style>

@@ -42,6 +42,14 @@ export default config({
           directory: 'public/content/blog',
           publicPath: '/content/blog/',
         }),
+        fotografie: fields.array(
+          fields.image({
+            label: 'Foto',
+            directory: 'public/content/blog',
+            publicPath: '/content/blog/',
+          }),
+          { label: 'Galleria foto', itemLabel: () => 'Foto' }
+        ),
         contenuto: fields.markdoc({ label: 'Contenuto articolo' }),
       },
     }),
@@ -62,6 +70,24 @@ export default config({
           directory: 'public/content/eventi',
           publicPath: '/content/eventi/',
         }),
+      },
+    }),
+
+    rassegna_stampa: collection({
+      label: 'Rassegna stampa',
+      slugField: 'titolo',
+      path: 'src/content/rassegna_stampa/*',
+      schema: {
+        titolo: fields.slug({ name: { label: 'Titolo articolo' } }),
+        testata: fields.text({ label: 'Testata (es. Corriere del Mezzogiorno)', validation: { isRequired: true } }),
+        data: fields.date({ label: 'Data pubblicazione', validation: { isRequired: true } }),
+        url: fields.url({ label: 'Link all\'articolo', validation: { isRequired: true } }),
+        immagine: fields.image({
+          label: 'Immagine / screenshot',
+          directory: 'public/content/rassegna_stampa',
+          publicPath: '/content/rassegna_stampa/',
+        }),
+        anteprima: fields.text({ label: 'Breve descrizione', multiline: true }),
       },
     }),
 

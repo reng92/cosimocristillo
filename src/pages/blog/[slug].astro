@@ -40,6 +40,20 @@ function fmtDate(d: Date) {
   <div class="prose">
     <Content />
   </div>
+
+  {post.data.fotografie && post.data.fotografie.length > 0 && (
+    <div style="margin-top:3rem">
+      <h2 style="font-size:1.1rem;font-weight:800;color:var(--blu);margin-bottom:1.25rem">&#128247; Galleria foto</h2>
+      <div class="galleria-grid" style="grid-template-columns:repeat(auto-fill,minmax(180px,1fr))">
+        {post.data.fotografie.map((src, i) => (
+          <a class="galleria-item glightbox" href={src} data-gallery="blog-gallery" data-title={`${post.data.titolo} – ${i + 1}`}>
+            <img src={src} alt={`Foto ${i + 1}`} loading="lazy"/>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+
   <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--grigio2)">
     <a class="back-link" href="/blog">← Torna al blog</a>
   </div>
