@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+export const prerender = true;
+---
+<Layout
+  title="Dichiarazione di accessibilità – Portico in Comune"
+  description="Dichiarazione di accessibilità del sito cosimocristillo.it ai sensi del European Accessibility Act (EAA) e delle linee guida WCAG 2.1."
+>
+
+<Header />
+
+<main id="main-content">
+<div class="page-hero">
+  <h1>Dichiarazione di accessibilità</h1>
+  <p>cosimocristillo.it – ai sensi del European Accessibility Act (EAA)</p>
+</div>
+
+<div class="page-content">
+  <div class="prose">
+
+    <h2>Impegno per l'accessibilità</h2>
+    <p>
+      <strong>Cosimo Cristillo – Lista Civica Portico in Comune</strong> si impegna a rendere il sito
+      <strong>cosimocristillo.it</strong> accessibile a tutte le persone, incluse quelle con disabilità,
+      conformemente alla Direttiva UE 2019/882 (European Accessibility Act) e agli standard tecnici
+      EN&nbsp;301&nbsp;549, che recepiscono le Linee Guida per l'Accessibilità dei Contenuti Web
+      <strong>WCAG 2.1 Livello AA</strong>.
+    </p>
+
+    <h2>Stato di conformità</h2>
+    <p>
+      Il sito <strong>cosimocristillo.it</strong> è <strong>parzialmente conforme</strong> ai requisiti
+      WCAG 2.1 Livello AA. Le non conformità residue e le eccezioni sono descritte nella sezione
+      "Contenuti non completamente accessibili" di seguito.
+    </p>
+
+    <h2>Misure adottate per l'accessibilità</h2>
+    <p>Sono stati implementati i seguenti accorgimenti tecnici:</p>
+    <ul>
+      <li>Struttura semantica HTML5 con landmark ARIA (<code>main</code>, <code>nav</code>, <code>footer</code>, <code>header</code>)</li>
+      <li>Skip link "Vai al contenuto principale" visibile da tastiera in cima a ogni pagina</li>
+      <li>Indicatore di focus visibile su tutti gli elementi interattivi (<code>:focus-visible</code>)</li>
+      <li>Etichette <code>aria-label</code> su tutti i controlli interattivi (menu mobile, bottoni, link ambigui)</li>
+      <li>Gerarchia di intestazioni corretta (<code>h1</code>–<code>h3</code>) in ogni pagina</li>
+      <li>Testo alternativo (<code>alt</code>) su tutte le immagini significative</li>
+      <li>Attributo <code>aria-hidden="true"</code> su contenuti puramente decorativi (video background, emoji nelle intestazioni, separatori)</li>
+      <li>Rapporti di contrasto cromatico conformi a WCAG 2.1 AA (minimo 4,5:1 per testo normale, 3:1 per testo grande)</li>
+      <li>Landmark <code>role="region"</code> con etichetta sull'avviso dell'evento in evidenza</li>
+      <li>Lingua della pagina dichiarata (<code>lang="it"</code>)</li>
+      <li>Link "Apri in Maps" differenziati da <code>aria-label</code> che specifica la destinazione</li>
+      <li>Titolo della pagina (<code>&lt;title&gt;</code>) descrittivo e univoco per ogni pagina</li>
+      <li>Nessun contenuto che lampeggi più di tre volte al secondo</li>
+    </ul>
+
+    <h2>Contenuti non completamente accessibili</h2>
+    <p>I seguenti elementi presentano limitazioni residue:</p>
+
+    <h3>1. Dimensioni di testo molto ridotte in alcuni elementi secondari</h3>
+    <p>
+      Alcune etichette di servizio (ad es. i secondi nel conto alla rovescia, il numero progressivo
+      nelle card candidati) hanno dimensioni inferiori a 12&nbsp;px. Si tratta di informazioni
+      accessorie che non impattano la fruibilità dei contenuti principali. L'ingrandimento del testo
+      fino al 200% tramite le impostazioni del browser non causa perdita di contenuto o funzionalità.
+    </p>
+
+    <h3>2. Widget social di terze parti (Facebook)</h3>
+    <p>
+      Il widget "Segui su Facebook" è fornito da Meta Platforms Ireland Ltd. mediante SDK di terze
+      parti e non è sotto il controllo diretto del titolare di questo sito. Eventuali problemi di
+      accessibilità interni al widget sono di responsabilità di Meta. I contenuti della pagina
+      Facebook sono comunque raggiungibili tramite i link diretti presenti nella sezione e nel footer.
+    </p>
+
+    <h3>3. Documenti in formato PDF</h3>
+    <p>
+      Il programma elettorale e l'elenco dei candidati sono disponibili in formato PDF. Tali documenti
+      potrebbero non essere completamente accessibili con tecnologie assistive. Su richiesta è possibile
+      ottenere i contenuti in formato alternativo accessibile (testo semplice o HTML) contattando il
+      titolare tramite i recapiti indicati di seguito.
+    </p>
+
+    <h3>4. Video decorativi senza audiodescrizione</h3>
+    <p>
+      I video presenti nella sezione hero della home page sono privi di audio e hanno funzione
+      puramente decorativa. Sono marcati con <code>aria-hidden="true"</code> e non trasmettono
+      informazioni non disponibili altrove nella pagina.
+    </p>
+
+    <h2>Feedback e recapiti</h2>
+    <p>
+      Se riscontri problemi di accessibilità, hai difficoltà a fruire di un contenuto o desideri
+      richiedere le informazioni in un formato alternativo, puoi contattarci attraverso i seguenti canali:
+    </p>
+    <ul>
+      <li>
+        <strong>Pagina Facebook ufficiale:</strong>
+        <a href="https://www.facebook.com/porticoincomune" target="_blank" rel="noopener">
+          facebook.com/porticoincomune
+        </a>
+      </li>
+      <li>
+        <strong>Profilo Facebook del candidato:</strong>
+        <a href="https://www.facebook.com/cosimo.cristillo.3" target="_blank" rel="noopener">
+          facebook.com/cosimo.cristillo.3
+        </a>
+      </li>
+    </ul>
+    <p>
+      Ci impegniamo a rispondere entro <strong>5 giorni lavorativi</strong> dalla ricezione della
+      segnalazione e, ove possibile, a fornire il contenuto richiesto in formato accessibile entro
+      15 giorni lavorativi.
+    </p>
+
+    <h2>Procedura di attuazione</h2>
+    <p>
+      In caso di risposta insoddisfacente o assenza di risposta entro i termini indicati, è possibile
+      rivolgersi all'autorità nazionale competente per l'accessibilità digitale ai sensi del
+      recepimento italiano della Direttiva UE 2019/882 (European Accessibility Act).
+    </p>
+    <p>
+      Per l'Italia, l'ente di riferimento per le segnalazioni in materia di accessibilità digitale è
+      l'<strong>Agenzia per l'Italia Digitale (AgID)</strong>:
+      <a href="https://www.agid.gov.it" target="_blank" rel="noopener">www.agid.gov.it</a>.
+    </p>
+
+    <h2>Preparazione della presente dichiarazione</h2>
+    <p>
+      La presente dichiarazione è stata preparata il <strong>26 aprile 2026</strong> mediante
+      autovalutazione condotta dal titolare del sito con l'ausilio di strumenti automatici
+      (Friendly Captcha Accessibility Checker, securityheaders.com) e verifica manuale del codice
+      sorgente.
+    </p>
+    <p>
+      La dichiarazione sarà riesaminata in occasione di aggiornamenti significativi del sito o,
+      comunque, con cadenza annuale.
+    </p>
+
+    <p><em>Ultimo aggiornamento: 26 aprile 2026</em></p>
+
+  </div>
+</div>
+</main>
+
+<Footer />
+
+</Layout>
