@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import Countdown from '../components/Countdown.astro';
 import { getCollection } from 'astro:content';
 
@@ -28,27 +30,7 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
 
 <Layout>
 
-<!-- HEADER -->
-<header>
-  <div class="nav-inner">
-    <a class="nav-brand" href="#top">
-      <img class="nav-logo" src="/content/Logo%20Portico%20in%20Comune/LOGO%20%20PORTICO%20in%20COMUNE%20web.png" alt="Portico in Comune"/>
-      <div class="nav-brand-text">
-        <strong>Cosimo Cristillo</strong>
-        <span>Portico in Comune</span>
-      </div>
-    </a>
-    <nav>
-      <a href="#intro">Il Progetto</a>
-      <a href="#giorni">100 Giorni</a>
-      <a href="#candidati">La Squadra</a>
-      <a href="#comune">Programma</a>
-      <a href="/blog">Blog</a>
-      <a href="/eventi">Eventi</a>
-      <a href="#voto" class="nav-cta">Vota</a>
-    </nav>
-  </div>
-</header>
+<Header />
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -513,25 +495,6 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="ft-logo">
-    <img src="/content/Logo%20Portico%20in%20Comune/LOGO%20%20PORTICO%20in%20COMUNE%20web.png" alt="Portico in Comune"/>
-  </div>
-  <p><strong>Cosimo Cristillo Sindaco</strong> &middot; Lista civica <strong>Portico in Comune</strong></p>
-  <p>Elezioni Comunali Portico di Caserta &middot; 24 e 25 Maggio 2026</p>
-  <hr class="ft-sep"/>
-  <p>
-    <a href="https://www.facebook.com/porticoincomune" target="_blank" rel="noopener">&#128462; Portico in Comune</a>
-    &nbsp;&middot;&nbsp;
-    <a href="https://www.facebook.com/cosimo.cristillo.3" target="_blank" rel="noopener">&#128100; Cosimo Cristillo</a>
-  </p>
-  <p style="margin-top:.5rem;font-size:.75rem">Materiale elettorale ai sensi della normativa vigente.</p>
-  <p style="margin-top:.5rem;font-size:.72rem">
-    <a href="/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
-    <a href="/cookie-policy">Cookie Policy</a> &nbsp;&middot;&nbsp;
-    <a href="javascript:void(0)" onclick="openCookieModal()" style="color:rgba(255,255,255,.4)">Gestisci cookie</a>
-  </p>
-</footer>
+<Footer />
 
 </Layout>

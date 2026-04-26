@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import { getCollection, getEntry } from 'astro:content';
 export const prerender = true;
 
@@ -38,9 +39,7 @@ function fmtDate(d: Date) {
   }
 </div>
 
-<footer style="background:var(--blu-s);color:rgba(255,255,255,.48);text-align:center;padding:2rem 1.5rem;font-size:.82rem">
-  <a href="/galleria" style="color:var(--oro);text-decoration:none">← Torna alla galleria</a>
-</footer>
+<Footer />
 
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" is:inline></script>
 <script>

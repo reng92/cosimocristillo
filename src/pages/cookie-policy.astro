@@ -1,15 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 export const prerender = true;
 ---
 <Layout title="Cookie Policy – Portico in Comune" description="Informativa sui cookie del sito cosimocristillo.it">
 
-<header>
-  <div class="nav-inner">
-    <a class="nav-brand" href="/"><img class="nav-logo" src="/content/Logo%20Portico%20in%20Comune/LOGO%20%20PORTICO%20in%20COMUNE%20web.png" alt="Logo"/><div class="nav-brand-text"><strong>Cosimo Cristillo</strong><span>Portico in Comune</span></div></a>
-    <nav><a href="/">← Home</a></nav>
-  </div>
-</header>
+<Header />
 
 <div class="page-hero"><h1>Cookie Policy</h1><p>Informativa sull'uso dei cookie – cosimocristillo.it</p></div>
 
@@ -37,8 +34,6 @@ export const prerender = true;
   </div>
 </div>
 
-<footer style="background:var(--blu-s);color:rgba(255,255,255,.48);text-align:center;padding:2rem 1.5rem;font-size:.82rem">
-  <a href="/" style="color:var(--oro);text-decoration:none">← Torna alla home</a>
-</footer>
+<Footer />
 
 </Layout>
