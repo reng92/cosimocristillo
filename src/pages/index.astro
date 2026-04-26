@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AnnouncementBar from '../components/AnnouncementBar.astro';
 import Countdown from '../components/Countdown.astro';
 import { getCollection } from 'astro:content';
 
@@ -31,6 +32,14 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
 <Layout>
 
 <Header />
+
+{prossimoEvento && (
+  <AnnouncementBar
+    titolo={prossimoEvento.data.titolo}
+    dataStr={`${fmtDay(prossimoEvento.data.data)} ${fmtMon(prossimoEvento.data.data)}${prossimoEvento.data.ora ? ` ore ${prossimoEvento.data.ora}` : ''}`}
+    luogo={prossimoEvento.data.luogo}
+  />
+)}
 
 <!-- HERO -->
 <section class="hero" id="top">

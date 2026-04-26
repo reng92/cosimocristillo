@@ -1,0 +1,29 @@
+---
+interface Props {
+  titolo: string;
+  dataStr: string;
+  luogo: string;
+}
+const { titolo, dataStr, luogo } = Astro.props;
+---
+
+<div class="announce-bar" id="announce-bar">
+  <span class="ab-icon">&#128197;</span>
+  <span class="ab-text">
+    <strong>{titolo}</strong><span class="ab-sep"> · </span>{dataStr}<span class="ab-sep"> · </span>{luogo}
+  </span>
+  <a href="/eventi" class="ab-link">Tutti gli eventi →</a>
+  <button class="ab-close" id="ab-close" aria-label="Chiudi avviso">&#10005;</button>
+</div>
+
+<script>
+  const bar = document.getElementById('announce-bar');
+  const btn = document.getElementById('ab-close');
+  if (sessionStorage.getItem('announce-closed') === '1') {
+    bar?.remove();
+  }
+  btn?.addEventListener('click', () => {
+    bar?.remove();
+    sessionStorage.setItem('announce-closed', '1');
+  });
+</script>
