@@ -13,6 +13,7 @@
     "@keystatic/astro": "^5.0.0",
     "@keystatic/core": "^0.5.0",
     "astro": "^5.0.0",
+    "glightbox": "^3.3.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "vite-plugin-static-copy": "^2.0.0"

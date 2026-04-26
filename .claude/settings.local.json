@@ -19,7 +19,17 @@
       "WebFetch(domain:nominatim.openstreetmap.org)",
       "WebFetch(domain:overpass-api.de)",
       "WebFetch(domain:en.wikipedia.org)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(git pull *)",
+      "Bash(git stash *)",
+      "Bash(node -e \"require\\('sharp'\\); console.log\\('sharp ok'\\)\")",
+      "Bash(node -e \"require\\('sharp'\\); console.log\\('ok'\\)\")",
+      "Bash(node -e \"require.resolve\\('sharp'\\)\")",
+      "Bash(node scripts/compress-images.mjs)",
+      "Bash(git commit *)",
+      "Bash(npm audit *)",
+      "Bash(npm uninstall *)",
+      "Bash(git grep *)"
     ]
   }
 }
