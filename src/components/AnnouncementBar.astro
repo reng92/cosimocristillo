@@ -7,7 +7,7 @@ interface Props {
 const { titolo, dataStr, luogo } = Astro.props;
 ---
 
-<div class="announce-bar" id="announce-bar">
+<div class="announce-bar" id="announce-bar" role="region" aria-label="Prossimo evento">
   <span class="ab-icon">&#128197;</span>
   <span class="ab-text">
     <strong>{titolo}</strong><span class="ab-sep"> · </span><span class="ab-sub">{dataStr}<span class="ab-sep-inner"> · </span>{luogo}</span>

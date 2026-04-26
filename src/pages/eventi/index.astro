@@ -23,7 +23,13 @@ function fmtMon(d: Date) { return new Intl.DateTimeFormat('it-IT', { month: 'sho
 
 <Header />
 
-<div class="page-content" style="max-width:860px;padding-top:2rem">
+<main id="main-content">
+<div class="page-hero">
+  <h1>Calendario eventi</h1>
+  <p>Tutti gli appuntamenti della campagna di Portico in Comune</p>
+</div>
+
+<div class="page-content" style="max-width:860px">
 
   {prossimi.length > 0 && (
     <div>
@@ -84,6 +90,8 @@ function fmtMon(d: Date) { return new Intl.DateTimeFormat('it-IT', { month: 'sho
     </div>
   )}
 </div>
+
+</main>
 
 <Footer />
 

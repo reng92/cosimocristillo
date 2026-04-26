@@ -55,6 +55,9 @@ const {
 }
 html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--testo);background:var(--bianco);line-height:1.65;overflow-x:hidden}
+.skip-link{position:absolute;top:-100%;left:1rem;background:var(--oro);color:var(--testo);padding:.5rem 1.25rem;border-radius:0 0 .5rem .5rem;font-weight:700;font-size:.9rem;z-index:10001;text-decoration:none;transition:top .15s}
+.skip-link:focus{top:0}
+:focus-visible{outline:3px solid var(--oro);outline-offset:3px;border-radius:2px}
 
 /* ── ANNOUNCE BAR ── */
 .announce-bar{background:var(--oro);color:var(--testo);display:flex;align-items:center;justify-content:center;gap:.75rem;padding:.4rem 1.25rem;font-size:.78rem;font-weight:600;flex-wrap:wrap}
@@ -381,6 +384,8 @@ footer a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
+
+<a href="#main-content" class="skip-link">Vai al contenuto principale</a>
 
 <script is:inline>
 window.dataLayer=window.dataLayer||[];

@@ -42,10 +42,12 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
   <Header />
 </div>
 
+<main id="main-content">
+
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-bg"></div>
-  <video class="hero-bg-video" autoplay muted loop playsinline>
+  <div class="hero-bg" aria-hidden="true"></div>
+  <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true">
     <source src="/content/video.mp4" type="video/mp4"/>
   </video>
   <div class="hero-inner">
@@ -64,7 +66,7 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
       <Countdown />
     </div>
     <div class="hero-video-wrap">
-      <video class="hero-video" autoplay muted loop playsinline>
+      <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
         <source src="/content/video.mp4" type="video/mp4"/>
       </video>
     </div>
@@ -512,6 +514,8 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
     </div>
   </div>
 </section>
+
+</main>
 
 <Footer />
 
