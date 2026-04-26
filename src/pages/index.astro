@@ -31,15 +31,16 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
 
 <Layout>
 
-<Header />
-
-{prossimoEvento && (
-  <AnnouncementBar
-    titolo={prossimoEvento.data.titolo}
-    dataStr={`${fmtDay(prossimoEvento.data.data)} ${fmtMon(prossimoEvento.data.data)}${prossimoEvento.data.ora ? ` ore ${prossimoEvento.data.ora}` : ''}`}
-    luogo={prossimoEvento.data.luogo}
-  />
-)}
+<div class="sticky-top">
+  {prossimoEvento && (
+    <AnnouncementBar
+      titolo={prossimoEvento.data.titolo}
+      dataStr={`${fmtDay(prossimoEvento.data.data)} ${fmtMon(prossimoEvento.data.data)}${prossimoEvento.data.ora ? ` ore ${prossimoEvento.data.ora}` : ''}`}
+      luogo={prossimoEvento.data.luogo}
+    />
+  )}
+  <Header />
+</div>
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -506,7 +507,7 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
     </div>
     <p style="font-size:.75rem;opacity:.45;margin-bottom:2rem">Verifica la tua sezione di appartenenza sulla tessera elettorale.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a class="btn-fb" href="https://www.facebook.com/porticoincomune" target="_blank" rel="noopener">&#128462; Portico in Comune</a>
+      <a class="btn-fb" href="https://www.facebook.com/porticoincomune" target="_blank" rel="noopener">Portico in Comune</a>
       <a class="btn-fb" style="background:rgba(255,255,255,.15);color:#fff" href="https://www.facebook.com/cosimo.cristillo.3" target="_blank" rel="noopener">&#128100; Cosimo Cristillo</a>
     </div>
   </div>
