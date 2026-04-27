@@ -29,7 +29,14 @@
       "Bash(git commit *)",
       "Bash(npm audit *)",
       "Bash(npm uninstall *)",
-      "Bash(git grep *)"
+      "Bash(git grep *)",
+      "Bash(where ffmpeg *)",
+      "Bash(ffmpeg -version)",
+      "PowerShell(Get-Command *)",
+      "Bash(npx astro *)",
+      "Bash(ffprobe *)",
+      "Bash(ffmpeg -y -i content/video.mp4 -an -vf \"scale=540:-2\" -c:v libx264 -crf 28 -preset slow -pix_fmt yuv420p -movflags +faststart content/video_new.mp4)",
+      "Bash(ffmpeg -y -i content/video.mp4 -an -vf \"scale=540:-2\" -c:v libvpx-vp9 -crf 35 -b:v 0 -deadline good -cpu-used 2 content/video.webm)"
     ]
   }
 }
