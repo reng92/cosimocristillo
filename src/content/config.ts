@@ -16,6 +16,7 @@ const eventi = defineCollection({
   schema: z.object({
     titolo: z.string(),
     data: z.coerce.date(),
+    data_fine: z.coerce.date().optional(),
     ora: z.string().optional(),
     luogo: z.string(),
     descrizione: z.string().optional(),

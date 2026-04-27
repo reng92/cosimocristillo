@@ -60,8 +60,9 @@ export default config({
       path: 'src/content/eventi/*',
       schema: {
         titolo: fields.slug({ name: { label: 'Titolo evento' } }),
-        data: fields.date({ label: 'Data', validation: { isRequired: true } }),
-        ora: fields.text({ label: 'Ora (es. 18:30)', defaultValue: '' }),
+        data: fields.date({ label: 'Data inizio', validation: { isRequired: true } }),
+        data_fine: fields.date({ label: 'Data fine (opzionale, per eventi multi-giorno)' }),
+        ora: fields.text({ label: 'Ora inizio (es. 18:30)', defaultValue: '' }),
         luogo: fields.text({ label: 'Luogo', validation: { isRequired: true } }),
         descrizione: fields.text({ label: 'Descrizione', multiline: true }),
         maps_url: fields.url({ label: 'Link Google Maps (opzionale)' }),

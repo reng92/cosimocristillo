@@ -3,21 +3,38 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
-export const prerender = true;
 
-const oggi = new Date();
-oggi.setHours(0, 0, 0, 0);
+// Mezzanotte Roma di oggi: un evento è "passato" quando la sua data_fine (o data) è < questo valore
+const oggiRomaStr = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome' }).format(new Date());
+const oggi = new Date(oggiRomaStr + 'T00:00:00Z');
+
+// Usa data_fine se presente, altrimenti data, per stabilire se l'evento è concluso
+function dataFine(e: { data: { data: Date; data_fine?: Date } }): Date {
+  return new Date(e.data.data_fine ?? e.data.data);
+}
+
 const tutti = (await getCollection('eventi'))
   .sort((a, b) => new Date(a.data.data).valueOf() - new Date(b.data.data).valueOf());
 
-const prossimi = tutti.filter(e => new Date(e.data.data) >= oggi);
-const passati  = tutti.filter(e => new Date(e.data.data) < oggi).reverse();
+const prossimi = tutti.filter(e => dataFine(e) >= oggi);
+const passati  = tutti.filter(e => dataFine(e) < oggi).reverse();
 
 function fmtDate(d: Date) {
   return new Intl.DateTimeFormat('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(d));
 }
 function fmtDay(d: Date) { return new Intl.DateTimeFormat('it-IT', { day: 'numeric' }).format(new Date(d)); }
 function fmtMon(d: Date) { return new Intl.DateTimeFormat('it-IT', { month: 'short' }).format(new Date(d)); }
+
+// Formatta range date per eventi multi-giorno
+function fmtRange(inizio: Date, fine?: Date): string {
+  if (!fine) return fmtDate(inizio);
+  const sameMonth = new Date(inizio).getMonth() === new Date(fine).getMonth() &&
+                    new Date(inizio).getFullYear() === new Date(fine).getFullYear();
+  if (sameMonth) {
+    return `${fmtDay(inizio)}–${fmtDay(fine)} ${fmtMon(inizio)} ${new Intl.DateTimeFormat('it-IT', { year: 'numeric' }).format(new Date(inizio))}`;
+  }
+  return `${fmtDay(inizio)} ${fmtMon(inizio)} – ${fmtDay(fine)} ${fmtMon(fine)} ${new Intl.DateTimeFormat('it-IT', { year: 'numeric' }).format(new Date(fine))}`;
+}
 ---
 <Layout title="Calendario eventi – Portico in Comune" description="Tutti gli eventi della campagna di Cosimo Cristillo e Portico in Comune.">
 
@@ -44,6 +61,7 @@ function fmtMon(d: Date) { return new Intl.DateTimeFormat('it-IT', { month: 'sho
             <div class="evento-body">
               <h4>{ev.data.titolo}</h4>
               <div class="ev-meta">
+                <span>&#128197; {fmtRange(ev.data.data, ev.data.data_fine)}</span>
                 {ev.data.ora && <span>&#128336; {ev.data.ora}</span>}
                 <span>&#128205; {ev.data.luogo}</span>
               </div>

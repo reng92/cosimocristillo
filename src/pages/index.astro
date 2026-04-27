@@ -6,16 +6,16 @@ import AnnouncementBar from '../components/AnnouncementBar.astro';
 import Countdown from '../components/Countdown.astro';
 import { getCollection } from 'astro:content';
 
-export const prerender = true;
-
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.data.valueOf() - a.data.data.valueOf())
   .slice(0, 3);
 
-const oggi = new Date();
-oggi.setHours(0, 0, 0, 0);
+// Mezzanotte Roma di oggi: un evento è "passato" quando la sua data_fine (o data) è < questo valore
+const oggiRomaStr = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome' }).format(new Date());
+const oggi = new Date(oggiRomaStr + 'T00:00:00Z');
+
 const prossimoEvento = (await getCollection('eventi'))
-  .filter(e => new Date(e.data.data) >= oggi)
+  .filter(e => new Date(e.data.data_fine ?? e.data.data) >= oggi)
   .sort((a, b) => new Date(a.data.data).valueOf() - new Date(b.data.data).valueOf())[0] ?? null;
 
 const gallerie = (await getCollection('galleria'))
@@ -47,7 +47,8 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg" aria-hidden="true"></div>
-  <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true">
+  <video class="hero-bg-video" autoplay muted loop playsinline preload="none" aria-hidden="true">
+    <source src="/content/video.webm" type="video/webm"/>
     <source src="/content/video.mp4" type="video/mp4"/>
   </video>
   <div class="hero-inner">
@@ -66,7 +67,8 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
       <Countdown />
     </div>
     <div class="hero-video-wrap">
-      <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+      <video class="hero-video" autoplay muted loop playsinline preload="none" aria-hidden="true">
+        <source src="/content/video.webm" type="video/webm"/>
         <source src="/content/video.mp4" type="video/mp4"/>
       </video>
     </div>
