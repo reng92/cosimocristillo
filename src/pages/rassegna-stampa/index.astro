@@ -3,7 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
-export const prerender = true;
+
+// Nascosta temporaneamente - per riabilitare rimuovi il return qui sotto
+return Astro.redirect('/', 301);
 
 const articoli = (await getCollection('rassegna_stampa'))
   .sort((a, b) => new Date(b.data.data).valueOf() - new Date(a.data.data).valueOf());

@@ -7,7 +7,7 @@ export const prerender = true;
 
 export async function getStaticPaths() {
   const gallerie = await getCollection('galleria');
-  return gallerie.map(a => ({ params: { slug: a.slug } }));
+  return gallerie.map(a => ({ params: { slug: a.id } }));
 }
 
 const { slug } = Astro.params;
