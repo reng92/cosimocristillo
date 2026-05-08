@@ -417,7 +417,7 @@ function fmtMon(d: Date)  { return new Intl.DateTimeFormat('it-IT', { month: 'sh
     <div class="bar"></div>
     <div class="galleria-albums-grid">
       {gallerie.map(album => (
-        <a class="galleria-album" href={`/galleria/${album.slug}`}>
+        <a class="galleria-album" href={`/galleria/${album.id}`}>
           {album.data.copertina
             ? <img class="galleria-album-cover" src={album.data.copertina} alt={album.data.titolo} loading="lazy"/>
             : <div class="galleria-album-cover" style="display:flex;align-items:center;justify-content:center;font-size:3rem">&#128247;</div>
